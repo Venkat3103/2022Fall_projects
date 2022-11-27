@@ -43,3 +43,15 @@ fig.show()
 
 # --------------------------------------------------------------------------------------------------------------------
 
+# % of games a team chose batting first, won the match
+
+winner_bat = pd.DataFrame(toss_df[["Team1","Team2","toss_winner","toss_decision","match_winner"]])
+
+winner_bat['Bat_Won'] = np.where((winner_bat['toss_winner'] == winner_bat['match_winner']) & (
+    winner_bat['toss_decision'] == "bat"), "Bat First" ,
+                                 np.where((winner_bat['toss_winner'] == winner_bat['match_winner']),
+                                          "Bat Second", np.nan))
+
+ax = sns.countplot(x="Bat_Won", data=winner_bat)
+
+# --------------------------------------------------------------------------------------------------------------------
