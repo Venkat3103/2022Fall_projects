@@ -31,27 +31,41 @@ fig.show()
 
 # How does Toss Decision has any relation with that team winning the match or not
 
-match_won = pd.DataFrame(toss_df.groupby(["match_winner","toss_decision"])["match_winner"].count())
+match_won = pd.DataFrame(toss_df.groupby(["match_winner", "toss_decision"])["match_winner"].count())
 match_won = match_won.rename(columns={'match_winner': 'Number of Matches Won'})
 match_won.reset_index(inplace=True)
-match_won = match_won.rename(columns = {'match_winner':"Match Winner"})
+match_won = match_won.rename(columns={'match_winner': "Match Winner"})
 match_won.head()
 
 colors = plotly.colors.qualitative.Prism
-fig = px.bar(match_won, x='Match Winner', y='Number of Matches Won', color = 'toss_decision', text=match_won['Number of Matches Won'].astype(str), color_discrete_sequence=colors)
+fig = px.bar(match_won, x='Match Winner', y='Number of Matches Won', color='toss_decision',
+             text=match_won['Number of Matches Won'].astype(str), color_discrete_sequence=colors)
 fig.show()
 
 # --------------------------------------------------------------------------------------------------------------------
 
 # % of games a team chose batting first, won the match
 
-winner_bat = pd.DataFrame(toss_df[["Team1","Team2","toss_winner","toss_decision","match_winner"]])
+winner_bat = pd.DataFrame(toss_df[["Team1", "Team2", "toss_winner", "toss_decision", "match_winner"]])
 
 winner_bat['Bat_Won'] = np.where((winner_bat['toss_winner'] == winner_bat['match_winner']) & (
-    winner_bat['toss_decision'] == "bat"), "Bat First" ,
+        winner_bat['toss_decision'] == "bat"), "Bat First",
                                  np.where((winner_bat['toss_winner'] == winner_bat['match_winner']),
                                           "Bat Second", np.nan))
 
 ax = sns.countplot(x="Bat_Won", data=winner_bat)
 
 # --------------------------------------------------------------------------------------------------------------------
+
+# % of games a team won the toss, won the match
+
+winner_toss = pd.DataFrame(toss_df[["toss_winner","match_winner"]])
+winner_toss
+
+winner_toss['Toss_Won'] = np.where((winner_toss['toss_winner'] == winner_toss['match_winner']), "WonT_WonM", np.where((winner_toss['toss_winner'] != winner_toss['match_winner']), "WonT_LostM",np.nan))
+winner_toss
+
+ax = sns.countplot(x="Toss_Won", data=winner_toss)
+
+# --------------------------------------------------------------------------------------------------------------------
+
