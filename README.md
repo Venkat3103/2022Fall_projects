@@ -1,4 +1,4 @@
-# 2022Fall_projects (Type III)
+# 2022Fall_projects (Combination of Type I and Type III)
 
 ### Authors
 
