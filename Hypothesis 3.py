@@ -5,6 +5,7 @@ import plotly
 import plotly.express as px
 from matplotlib import ticker
 import numpy as np
+import plotly.graph_objects as go
 
 
 def SeasonData(df, season):
@@ -82,11 +83,48 @@ def player_count(season_df):
     count_df = count_df.groupby(["Team", "player"])[["player", "count"]].sum()
     count_df.reset_index(inplace=True)
 
-    return print(count_df)
+    return count_df
+
+
+def plot_consistency(df_count):
+    """
+
+  :param df_count:
+  """
+    plot_list = df_count["Team"].unique().tolist()
+
+    for i in plot_list:
+        plot_df = pd.DataFrame()
+
+        plot_df = df_count[df_count["Team"] == i]
+
+        plot_df["percentage"] = round((plot_df["count"] / len(plot_df["count"])) * 100, 2)
+
+        plot_df.sort_values(by=['percentage'], ascending=False, inplace=True)
+
+        x = plot_df["player"]
+        y = plot_df["percentage"]
+
+        # Use textposition='auto' for direct text
+        fig = go.Figure(data=[go.Bar(
+            x=x, y=y,
+            text=y,
+            textposition='auto',
+            marker_color='rgb(55, 83, 109)'
+        )])
+
+        fig.update_layout(
+            title_text=f'{i} : Players Selection Consistency % for each match',
+            uniformtext=dict(mode="hide", minsize=10))
+
+        return fig.show()
 
 
 if __name__ == "__main__":
     team_df = pd.read_csv("teamsheet.csv")
-    SeasonData(team_df, 2018)
-    player_count(season_2018)
 
+    season_df = SeasonData(team_df, 2018)
+
+    count_df = player_count(season_df)
+
+    plot_consistency(count_df)
