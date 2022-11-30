@@ -2,9 +2,9 @@
 
 ### Authors
 
-• Venkatasubramanian Narasimman
-• Burzin Wadia
-• Arjun Kumaran
+* Venkatasubramanian Narasimman
+* Burzin Wadia
+* Arjun Kumaran
 
 ## Topic: Cricket Analytics – Evaluating strategies and captaincy in Twenty20 cricket (IPL)
 
