@@ -8,7 +8,7 @@ import numpy as np
 import plotly.graph_objects as go
 
 
-def SeasonData(df, season):
+def SeasonData(df: pd.DataFrame, season: int) -> pd.DataFrame:
     """
     This function takes the main csv file to filter it according to the season year and gives it as output dataframe.
 
@@ -49,12 +49,35 @@ def SeasonData(df, season):
     return team_season
 
 
-def player_count(season_df):
+def player_count(season_df : pd.DataFrame) -> pd.DataFrame:
+    """
+    This function takes seasonal team dataframe which consists of all the information of players for a specific
+    season year. The function then aggregates and counts the number of time each player appeared for their team
+    for that specific season. It then returns a dataframe of this information.
+
+    param season_df: The input would be the name of the dataframe for a specific season.
+    :return: will return a dataframe with all the player count for each team for a specific season year.
+
+    >>> f1 = player_count(pd.DataFrame({ "Team":["Chennai Super Kings", "Sunrisers Hyderabad", "Rajasthan Royals", "Chennai Super Kings", "Chennai Super Kings", "Sunrisers Hyderabad" ] , "date": ["2018-04-07", "2019-05-17", "2018-04-01", '2018-04-03', "2018-07-01", "2018-09-12"  ], "player1": ["A1","B1","C1","A1","A1","B1"] ,"player2": ["A2","B2","C2","A2","A3","B1"] , "player3": ["A3","B3","C3","A1","A3","B2"] , "player4": ["A4","B4","C4","A4","A4","B4"] , "player5": ["A5","B5","C5","A5","A5","B4"] ,"player6": ["A6","B6","C6","A6","A7","B6"],"player7": ["A7","B7","C7","A7","A7","B7"] ,"player8": ["A8","B8","C8","A8","A8","B8"] ,"player9": ["A9","B9","C9","A9","A7","B7"] ,"player10": ["A10","B10","C10","A10","A10","B10"] ,"player11": ["A11","B11","C11","A7","A8","B7"],"year": [2018,2019,2018,2018,2018,2018]}))
+    >>> f1[f1["count"] >4]
+                      Team player  count
+    8  Chennai Super Kings     A7      6
+
+    >>> f1["count"].sum()
+    66
+
+    >>> f1["Team"].unique().tolist()
+    ['Chennai Super Kings', 'Rajasthan Royals', 'Sunrisers Hyderabad']
+
+    >>> f1.dtypes
+    Team      object
+    player    object
+    count      int64
+    dtype: object
+
+    ToDo: To convert datatypes of the input dataframe columns to its respective datatype
     """
 
-    :param season_df:
-    :return:
-    """
     p1 = season_df.groupby(['Team', 'player1'])['player1'].count().to_frame().rename(columns={"player1": "count1"})
     p2 = season_df.groupby(['Team', 'player2'])['player2'].count().to_frame().rename(columns={"player2": "count2"})
     p3 = season_df.groupby(['Team', 'player3'])['player3'].count().to_frame().rename(columns={"player3": "count3"})
