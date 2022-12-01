@@ -135,7 +135,7 @@ def plot_consistency(df_count):
 if __name__ == "__main__":
     team_df = pd.read_csv("teamsheet.csv")
 
-    season_df = SeasonData(team_df, 2018)
+    season_df = SeasonData(team_df,2018)
 
     count_df = player_count(season_df)
 
