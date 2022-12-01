@@ -1,10 +1,10 @@
-# 2022Fall_projects (Type III)
+# 2022Fall_projects (Combination of Type I and Type III)
 
 ### Authors
 
-• Venkatasubramanian Narasimman
-• Burzin Wadia
-• Arjun Kumaran
+* Venkatasubramanian Narasimman
+* Burzin Wadia
+* Arjun Kumaran
 
 ## Topic: Cricket Analytics – Evaluating strategies and captaincy in Twenty20 cricket (IPL)
 
@@ -65,7 +65,6 @@ while ago which has now been blocked. Another info dataset about player selectio
 decisions is being obtained from Cricsheet.org website which is an open-source cricket data site.
 
 URL1: https://github.com/Venkat3103/2022Fall_projects/blob/main/ipl_advanced_bbb_since_2018.csv
-URL 2: https://cricsheet.org/downloads/
 
 
 Our primary objective of this project is to consider various parameters in the game of cricket that 
