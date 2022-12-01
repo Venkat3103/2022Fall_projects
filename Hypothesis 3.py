@@ -15,11 +15,20 @@ def SeasonData(df, season):
     df: The Team DataFrame which provides information about the players played for a team for each season
     return: It does not return but instead creates variables having dataframes, and stores in the memory. (ex. season_2018)
 
-    >>> SeasonData(pd.DataFrame({"Team":["Chennai Super Kings", "Sunrisers Hyderabad" ] ,
-    "date": ["2018-04-07", "2019-05-17"], "player1": ["A","B"] , "player2": ["A","B"] , "player3": ["A","B"] ,
-    "player4": ["A","B"] , "player5": ["A","B"] ,"player6": ["A","B"],"player7": ["A","B"] ,
-                                 "player8": ["A","B"] ,"player9": ["A","B"] ,"player10": ["A","B"] ,
-                                 "player11": ["A","B"] ,"year": [2018,2019]})
+    >>> d1= SeasonData(pd.DataFrame({"Unnamed: 0": [0,1,2], "Team":["Chennai Super Kings", "Sunrisers Hyderabad", "Rajasthan Royals" ] , "date": ["2018-04-07", "2019-05-17", "2018-04-01" ], "player1": ["A1","B1","C1"] ,"player2": ["A2","B2","C2"] , "player3": ["A3","B3","C3"] , "player4": ["A4","B4","C4"] , "player5": ["A5","B5","C5"] ,"player6": ["A6","B6","C6"],"player7": ["A7","B7","C7"] ,"player8": ["A8","B8","C8"] ,"player9": ["A9","B9","C9"] ,"player10": ["A10","B10","C10"] ,"player11": ["A11","B11","C11"],"year": [2018,2019,2018]}),2018)
+    >>> d1["Team"].tolist()
+    ['Chennai Super Kings', 'Rajasthan Royals']
+
+    >>> d1["year"].tolist()
+    [2018, 2018]
+
+    >>> d2= SeasonData(pd.DataFrame({"Unnamed: 0": [0,1,2], "Team":["Chennai Super Kings", "Sunrisers Hyderabad", "Rajasthan Royals" ] , "date": ["2018-04-07", "2019-05-17", "2018-04-01" ], "player1": ["A1","B1","C1"] ,"player2": ["A2","B2","C2"] , "player3": ["A3","B3","C3"] , "player4": ["A4","B4","C4"] , "player5": ["A5","B5","C5"] ,"player6": ["A6","B6","C6"],"player7": ["A7","B7","C7"] ,"player8": ["A8","B8","C8"] ,"player9": ["A9","B9","C9"] ,"player10": ["A10","B10","C10"] ,"player11": ["A11","B11","C11"],"year": [2018,2019,2018]}),2019)
+    >>> d2["Team"].tolist()
+    ['Sunrisers Hyderabad']
+
+    >>> d2[["player1","player2","player3"]]
+      player1 player2 player3
+    1      B1      B2	   B3
 
     """
     # User input at the very beginning of the file should be the season year
@@ -29,12 +38,11 @@ def SeasonData(df, season):
     df['year'] = pd.DatetimeIndex(df['date']).year
     df.drop(columns="Unnamed: 0", inplace=True)
 
-    # Dynamic Variable Name for the dataset related to that specific season year
-    for i in team_df["year"].unique():
-        globals()[f'season_{i}'] = pd.DataFrame(team_df[team_df["year"] == i].sort_values(by=['Team', 'date']))
+    team_season = pd.DataFrame(df[df["year"] == season].sort_values(by=['Team', 'date']))
 
     # Returns Dataframe for a season with variable name like "season_2018" if season = 2018
-    return globals()[f'season_{season}']
+
+    return team_season
 
 
 def player_count(season_df):
@@ -128,3 +136,4 @@ if __name__ == "__main__":
     count_df = player_count(season_df)
 
     plot_consistency(count_df)
+
