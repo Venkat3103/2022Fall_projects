@@ -129,6 +129,35 @@ def compute_total_runs(df):
     return df
 
 
+def compute_team_score_and_target(df):
+    """
+
+    :param df: the data frame with ball by ball information
+    :return: two data frames one for each inning with the team scores for both and additionally target for the second innings
+    >>> test_df = pd.read_csv("test_file_1.csv")
+    >>> test_df.drop(columns=["Unnamed: 0"],inplace=True)
+    >>> i1,i2 = compute_team_score_and_target(test_df)
+    >>> out1 = pd.read_csv("out_file_1.csv")
+    >>> out1.drop(columns=["Unnamed: 0"],inplace=True)
+    >>> i1.equals(out1)
+    True
+    >>> out2 = pd.read_csv("out_file_2.csv")
+    >>> out2.drop(columns=["Unnamed: 0"],inplace=True)
+    >>> i2.equals(out2)
+    True
+    """
+    df_inn2 = df[df['innings'] == 2]
+    df_inn1 = df[df['innings'] == 1]
+    df_inn2['team_score'] = df_inn2['total_runs_scored'] + df_inn2['runs_off_bat'] + df_inn2['extras']
+    df_inn1['team_score'] = df_inn1['total_runs_scored'] + df_inn1['runs_off_bat'] + df_inn1['extras']
+    trs2 = df_inn2.groupby(['match_id'])['team_score'].max().to_frame()
+    trs2.rename(columns={'team_score': 'team_total'}, inplace=True)
+    df_inn2 = pd.merge(trs2, df_inn2, on=["match_id"], how="inner")
+    trs1 = df_inn1.groupby(['match_id'])['team_score'].max().to_frame()
+    trs1.rename(columns={'team_score': 'target'}, inplace=True)
+    df_inn2 = pd.merge(trs1, df_inn2, on=["match_id"], how="inner")
+    df_inn2['target'] += 1
+    return df_inn1, df_inn2
 
 
 def compute_balls_bowled(ball):
