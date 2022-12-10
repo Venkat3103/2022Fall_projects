@@ -1,0 +1,226 @@
+,match_id,season,start_date,venue,innings,ball,batting_team,bowling_team,striker,non_striker,bowler,runs_off_bat,extras,wides,noballs,byes,legbyes,penalty,wicket_type,player_dismissed,other_wicket_type,other_player_dismissed,is_wicket,phase,total_runs_scored
+0,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,1,0.1,Rajasthan Royals,Sunrisers Hyderabad,AM Rahane,DJM Short,B Kumar,0,0,,,,,,,,,,0,powerplay,0
+1,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,1,0.2,Rajasthan Royals,Sunrisers Hyderabad,AM Rahane,DJM Short,B Kumar,1,0,,,,,,,,,,0,powerplay,0
+2,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,1,0.3,Rajasthan Royals,Sunrisers Hyderabad,DJM Short,AM Rahane,B Kumar,0,0,,,,,,,,,,0,powerplay,1
+3,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,1,0.4,Rajasthan Royals,Sunrisers Hyderabad,DJM Short,AM Rahane,B Kumar,0,1,1.0,,,,,,,,,0,powerplay,1
+4,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,1,0.5,Rajasthan Royals,Sunrisers Hyderabad,DJM Short,AM Rahane,B Kumar,4,0,,,,,,,,,,0,powerplay,2
+5,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,1,0.6,Rajasthan Royals,Sunrisers Hyderabad,DJM Short,AM Rahane,B Kumar,0,0,,,,,,,,,,0,powerplay,6
+6,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,1,0.7,Rajasthan Royals,Sunrisers Hyderabad,DJM Short,AM Rahane,B Kumar,0,0,,,,,,run out,DJM Short,,,1,powerplay,6
+7,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,1,1.1,Rajasthan Royals,Sunrisers Hyderabad,SV Samson,AM Rahane,B Stanlake,0,0,,,,,,,,,,0,powerplay,6
+8,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,1,1.2,Rajasthan Royals,Sunrisers Hyderabad,SV Samson,AM Rahane,B Stanlake,0,0,,,,,,,,,,0,powerplay,6
+9,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,1,1.3,Rajasthan Royals,Sunrisers Hyderabad,SV Samson,AM Rahane,B Stanlake,0,0,,,,,,,,,,0,powerplay,6
+10,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,1,1.4,Rajasthan Royals,Sunrisers Hyderabad,SV Samson,AM Rahane,B Stanlake,2,0,,,,,,,,,,0,powerplay,6
+11,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,1,1.5,Rajasthan Royals,Sunrisers Hyderabad,SV Samson,AM Rahane,B Stanlake,0,0,,,,,,,,,,0,powerplay,8
+12,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,1,1.6,Rajasthan Royals,Sunrisers Hyderabad,SV Samson,AM Rahane,B Stanlake,3,0,,,,,,,,,,0,powerplay,8
+13,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,1,2.1,Rajasthan Royals,Sunrisers Hyderabad,SV Samson,AM Rahane,B Kumar,4,0,,,,,,,,,,0,powerplay,11
+14,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,1,2.2,Rajasthan Royals,Sunrisers Hyderabad,SV Samson,AM Rahane,B Kumar,0,0,,,,,,,,,,0,powerplay,15
+15,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,1,2.3,Rajasthan Royals,Sunrisers Hyderabad,SV Samson,AM Rahane,B Kumar,4,0,,,,,,,,,,0,powerplay,15
+16,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,1,2.4,Rajasthan Royals,Sunrisers Hyderabad,SV Samson,AM Rahane,B Kumar,1,0,,,,,,,,,,0,powerplay,19
+17,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,1,2.5,Rajasthan Royals,Sunrisers Hyderabad,AM Rahane,SV Samson,B Kumar,1,0,,,,,,,,,,0,powerplay,20
+18,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,1,2.6,Rajasthan Royals,Sunrisers Hyderabad,SV Samson,AM Rahane,B Kumar,0,0,,,,,,,,,,0,powerplay,21
+19,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,1,3.1,Rajasthan Royals,Sunrisers Hyderabad,AM Rahane,SV Samson,Shakib Al Hasan,0,0,,,,,,,,,,0,powerplay,21
+20,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,1,3.2,Rajasthan Royals,Sunrisers Hyderabad,AM Rahane,SV Samson,Shakib Al Hasan,0,0,,,,,,,,,,0,powerplay,21
+21,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,1,3.3,Rajasthan Royals,Sunrisers Hyderabad,AM Rahane,SV Samson,Shakib Al Hasan,4,0,,,,,,,,,,0,powerplay,21
+22,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,1,3.4,Rajasthan Royals,Sunrisers Hyderabad,AM Rahane,SV Samson,Shakib Al Hasan,1,0,,,,,,,,,,0,powerplay,25
+23,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,1,3.5,Rajasthan Royals,Sunrisers Hyderabad,SV Samson,AM Rahane,Shakib Al Hasan,1,0,,,,,,,,,,0,powerplay,26
+24,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,1,3.6,Rajasthan Royals,Sunrisers Hyderabad,AM Rahane,SV Samson,Shakib Al Hasan,0,0,,,,,,,,,,0,powerplay,27
+25,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,1,4.1,Rajasthan Royals,Sunrisers Hyderabad,SV Samson,AM Rahane,B Stanlake,1,0,,,,,,,,,,0,powerplay,27
+26,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,1,4.2,Rajasthan Royals,Sunrisers Hyderabad,AM Rahane,SV Samson,B Stanlake,4,0,,,,,,,,,,0,powerplay,28
+27,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,1,4.3,Rajasthan Royals,Sunrisers Hyderabad,AM Rahane,SV Samson,B Stanlake,1,0,,,,,,,,,,0,powerplay,32
+28,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,1,4.4,Rajasthan Royals,Sunrisers Hyderabad,SV Samson,AM Rahane,B Stanlake,0,1,1.0,,,,,,,,,0,powerplay,33
+29,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,1,4.5,Rajasthan Royals,Sunrisers Hyderabad,SV Samson,AM Rahane,B Stanlake,2,0,,,,,,,,,,0,powerplay,34
+30,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,1,4.6,Rajasthan Royals,Sunrisers Hyderabad,SV Samson,AM Rahane,B Stanlake,4,0,,,,,,,,,,0,powerplay,36
+31,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,1,4.7,Rajasthan Royals,Sunrisers Hyderabad,SV Samson,AM Rahane,B Stanlake,1,0,,,,,,,,,,0,powerplay,40
+32,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,1,5.1,Rajasthan Royals,Sunrisers Hyderabad,SV Samson,AM Rahane,Shakib Al Hasan,0,0,,,,,,,,,,0,powerplay,41
+33,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,1,5.2,Rajasthan Royals,Sunrisers Hyderabad,SV Samson,AM Rahane,Shakib Al Hasan,4,0,,,,,,,,,,0,powerplay,41
+34,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,1,5.3,Rajasthan Royals,Sunrisers Hyderabad,SV Samson,AM Rahane,Shakib Al Hasan,0,0,,,,,,,,,,0,powerplay,45
+35,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,1,5.4,Rajasthan Royals,Sunrisers Hyderabad,SV Samson,AM Rahane,Shakib Al Hasan,1,0,,,,,,,,,,0,powerplay,45
+36,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,1,5.5,Rajasthan Royals,Sunrisers Hyderabad,AM Rahane,SV Samson,Shakib Al Hasan,0,1,,,,1.0,,,,,,0,powerplay,46
+37,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,1,5.6,Rajasthan Royals,Sunrisers Hyderabad,SV Samson,AM Rahane,Shakib Al Hasan,1,0,,,,,,,,,,0,powerplay,47
+38,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,1,6.1,Rajasthan Royals,Sunrisers Hyderabad,SV Samson,AM Rahane,S Kaul,0,0,,,,,,,,,,0,middle overs,48
+39,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,1,6.2,Rajasthan Royals,Sunrisers Hyderabad,SV Samson,AM Rahane,S Kaul,1,0,,,,,,,,,,0,middle overs,48
+40,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,1,6.3,Rajasthan Royals,Sunrisers Hyderabad,AM Rahane,SV Samson,S Kaul,0,1,1.0,,,,,,,,,0,middle overs,49
+41,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,1,6.4,Rajasthan Royals,Sunrisers Hyderabad,AM Rahane,SV Samson,S Kaul,1,0,,,,,,,,,,0,middle overs,50
+42,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,1,6.5,Rajasthan Royals,Sunrisers Hyderabad,SV Samson,AM Rahane,S Kaul,1,0,,,,,,,,,,0,middle overs,51
+43,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,1,6.6,Rajasthan Royals,Sunrisers Hyderabad,AM Rahane,SV Samson,S Kaul,0,0,,,,,,caught,AM Rahane,,,1,middle overs,52
+44,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,1,6.7,Rajasthan Royals,Sunrisers Hyderabad,SV Samson,BA Stokes,S Kaul,4,0,,,,,,,,,,0,middle overs,52
+45,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,1,7.1,Rajasthan Royals,Sunrisers Hyderabad,BA Stokes,SV Samson,Rashid Khan,0,0,,,,,,,,,,0,middle overs,56
+46,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,1,7.2,Rajasthan Royals,Sunrisers Hyderabad,BA Stokes,SV Samson,Rashid Khan,0,0,,,,,,,,,,0,middle overs,56
+47,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,1,7.3,Rajasthan Royals,Sunrisers Hyderabad,BA Stokes,SV Samson,Rashid Khan,0,0,,,,,,,,,,0,middle overs,56
+48,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,1,7.4,Rajasthan Royals,Sunrisers Hyderabad,BA Stokes,SV Samson,Rashid Khan,1,0,,,,,,,,,,0,middle overs,56
+49,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,1,7.5,Rajasthan Royals,Sunrisers Hyderabad,SV Samson,BA Stokes,Rashid Khan,0,0,,,,,,,,,,0,middle overs,57
+50,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,1,7.6,Rajasthan Royals,Sunrisers Hyderabad,SV Samson,BA Stokes,Rashid Khan,0,0,,,,,,,,,,0,middle overs,57
+51,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,1,8.1,Rajasthan Royals,Sunrisers Hyderabad,BA Stokes,SV Samson,B Stanlake,1,0,,,,,,,,,,0,middle overs,57
+52,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,1,8.2,Rajasthan Royals,Sunrisers Hyderabad,SV Samson,BA Stokes,B Stanlake,1,0,,,,,,,,,,0,middle overs,58
+53,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,1,8.3,Rajasthan Royals,Sunrisers Hyderabad,BA Stokes,SV Samson,B Stanlake,2,0,,,,,,,,,,0,middle overs,59
+54,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,1,8.4,Rajasthan Royals,Sunrisers Hyderabad,BA Stokes,SV Samson,B Stanlake,1,0,,,,,,,,,,0,middle overs,61
+55,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,1,8.5,Rajasthan Royals,Sunrisers Hyderabad,SV Samson,BA Stokes,B Stanlake,1,0,,,,,,,,,,0,middle overs,62
+56,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,1,8.6,Rajasthan Royals,Sunrisers Hyderabad,BA Stokes,SV Samson,B Stanlake,0,0,,,,,,caught,BA Stokes,,,1,middle overs,63
+57,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,1,9.1,Rajasthan Royals,Sunrisers Hyderabad,SV Samson,RA Tripathi,Shakib Al Hasan,1,0,,,,,,,,,,0,middle overs,63
+58,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,1,9.2,Rajasthan Royals,Sunrisers Hyderabad,RA Tripathi,SV Samson,Shakib Al Hasan,1,0,,,,,,,,,,0,middle overs,64
+59,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,1,9.3,Rajasthan Royals,Sunrisers Hyderabad,SV Samson,RA Tripathi,Shakib Al Hasan,1,0,,,,,,,,,,0,middle overs,65
+60,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,1,9.4,Rajasthan Royals,Sunrisers Hyderabad,RA Tripathi,SV Samson,Shakib Al Hasan,1,0,,,,,,,,,,0,middle overs,66
+61,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,1,9.5,Rajasthan Royals,Sunrisers Hyderabad,SV Samson,RA Tripathi,Shakib Al Hasan,2,0,,,,,,,,,,0,middle overs,67
+62,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,1,9.6,Rajasthan Royals,Sunrisers Hyderabad,SV Samson,RA Tripathi,Shakib Al Hasan,2,0,,,,,,,,,,0,middle overs,69
+63,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,1,10.1,Rajasthan Royals,Sunrisers Hyderabad,RA Tripathi,SV Samson,B Stanlake,1,0,,,,,,,,,,0,middle overs,71
+64,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,1,10.2,Rajasthan Royals,Sunrisers Hyderabad,SV Samson,RA Tripathi,B Stanlake,1,0,,,,,,,,,,0,middle overs,72
+65,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,1,10.3,Rajasthan Royals,Sunrisers Hyderabad,RA Tripathi,SV Samson,B Stanlake,0,0,,,,,,,,,,0,middle overs,73
+66,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,1,10.4,Rajasthan Royals,Sunrisers Hyderabad,RA Tripathi,SV Samson,B Stanlake,0,0,,,,,,,,,,0,middle overs,73
+67,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,1,10.5,Rajasthan Royals,Sunrisers Hyderabad,RA Tripathi,SV Samson,B Stanlake,1,0,,,,,,,,,,0,middle overs,73
+68,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,1,10.6,Rajasthan Royals,Sunrisers Hyderabad,SV Samson,RA Tripathi,B Stanlake,1,0,,,,,,,,,,0,middle overs,74
+69,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,1,11.1,Rajasthan Royals,Sunrisers Hyderabad,SV Samson,RA Tripathi,Rashid Khan,1,0,,,,,,,,,,0,middle overs,75
+70,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,1,11.2,Rajasthan Royals,Sunrisers Hyderabad,RA Tripathi,SV Samson,Rashid Khan,1,0,,,,,,,,,,0,middle overs,76
+71,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,1,11.3,Rajasthan Royals,Sunrisers Hyderabad,SV Samson,RA Tripathi,Rashid Khan,1,0,,,,,,,,,,0,middle overs,77
+72,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,1,11.4,Rajasthan Royals,Sunrisers Hyderabad,RA Tripathi,SV Samson,Rashid Khan,4,0,,,,,,,,,,0,middle overs,78
+73,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,1,11.5,Rajasthan Royals,Sunrisers Hyderabad,RA Tripathi,SV Samson,Rashid Khan,4,0,,,,,,,,,,0,middle overs,82
+74,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,1,11.6,Rajasthan Royals,Sunrisers Hyderabad,RA Tripathi,SV Samson,Rashid Khan,1,0,,,,,,,,,,0,middle overs,86
+75,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,1,12.1,Rajasthan Royals,Sunrisers Hyderabad,RA Tripathi,SV Samson,S Kaul,1,0,,,,,,,,,,0,middle overs,87
+76,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,1,12.2,Rajasthan Royals,Sunrisers Hyderabad,SV Samson,RA Tripathi,S Kaul,1,0,,,,,,,,,,0,middle overs,88
+77,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,1,12.3,Rajasthan Royals,Sunrisers Hyderabad,RA Tripathi,SV Samson,S Kaul,1,0,,,,,,,,,,0,middle overs,89
+78,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,1,12.4,Rajasthan Royals,Sunrisers Hyderabad,SV Samson,RA Tripathi,S Kaul,0,1,,,,1.0,,,,,,0,middle overs,90
+79,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,1,12.5,Rajasthan Royals,Sunrisers Hyderabad,RA Tripathi,SV Samson,S Kaul,1,0,,,,,,,,,,0,middle overs,91
+80,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,1,12.6,Rajasthan Royals,Sunrisers Hyderabad,SV Samson,RA Tripathi,S Kaul,0,0,,,,,,,,,,0,middle overs,92
+81,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,1,13.1,Rajasthan Royals,Sunrisers Hyderabad,RA Tripathi,SV Samson,Shakib Al Hasan,0,0,,,,,,,,,,0,middle overs,92
+82,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,1,13.2,Rajasthan Royals,Sunrisers Hyderabad,RA Tripathi,SV Samson,Shakib Al Hasan,0,0,,,,,,caught,RA Tripathi,,,1,middle overs,92
+83,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,1,13.3,Rajasthan Royals,Sunrisers Hyderabad,SV Samson,JC Buttler,Shakib Al Hasan,1,0,,,,,,,,,,0,middle overs,92
+84,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,1,13.4,Rajasthan Royals,Sunrisers Hyderabad,JC Buttler,SV Samson,Shakib Al Hasan,1,0,,,,,,,,,,0,middle overs,93
+85,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,1,13.5,Rajasthan Royals,Sunrisers Hyderabad,SV Samson,JC Buttler,Shakib Al Hasan,0,0,,,,,,caught,SV Samson,,,1,middle overs,94
+86,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,1,13.6,Rajasthan Royals,Sunrisers Hyderabad,JC Buttler,K Gowtham,Shakib Al Hasan,1,0,,,,,,,,,,0,middle overs,94
+87,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,1,14.1,Rajasthan Royals,Sunrisers Hyderabad,JC Buttler,K Gowtham,S Kaul,0,0,,,,,,,,,,0,middle overs,95
+88,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,1,14.2,Rajasthan Royals,Sunrisers Hyderabad,JC Buttler,K Gowtham,S Kaul,1,0,,,,,,,,,,0,middle overs,95
+89,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,1,14.3,Rajasthan Royals,Sunrisers Hyderabad,K Gowtham,JC Buttler,S Kaul,0,0,,,,,,,,,,0,middle overs,96
+90,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,1,14.4,Rajasthan Royals,Sunrisers Hyderabad,K Gowtham,JC Buttler,S Kaul,0,0,,,,,,caught,K Gowtham,,,1,middle overs,96
+91,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,1,14.5,Rajasthan Royals,Sunrisers Hyderabad,S Gopal,JC Buttler,S Kaul,0,0,,,,,,,,,,0,middle overs,96
+92,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,1,14.6,Rajasthan Royals,Sunrisers Hyderabad,S Gopal,JC Buttler,S Kaul,1,0,,,,,,,,,,0,middle overs,96
+93,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,1,15.1,Rajasthan Royals,Sunrisers Hyderabad,S Gopal,JC Buttler,Rashid Khan,4,0,,,,,,,,,,0,middle overs,97
+94,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,1,15.2,Rajasthan Royals,Sunrisers Hyderabad,S Gopal,JC Buttler,Rashid Khan,2,0,,,,,,,,,,0,middle overs,101
+95,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,1,15.3,Rajasthan Royals,Sunrisers Hyderabad,S Gopal,JC Buttler,Rashid Khan,1,0,,,,,,,,,,0,middle overs,103
+96,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,1,15.4,Rajasthan Royals,Sunrisers Hyderabad,JC Buttler,S Gopal,Rashid Khan,1,0,,,,,,,,,,0,middle overs,104
+97,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,1,15.5,Rajasthan Royals,Sunrisers Hyderabad,S Gopal,JC Buttler,Rashid Khan,0,0,,,,,,,,,,0,middle overs,105
+98,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,1,15.6,Rajasthan Royals,Sunrisers Hyderabad,S Gopal,JC Buttler,Rashid Khan,1,0,,,,,,,,,,0,middle overs,105
+99,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,1,16.1,Rajasthan Royals,Sunrisers Hyderabad,S Gopal,JC Buttler,B Kumar,0,0,,,,,,,,,,0,death overs,106
+100,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,1,16.2,Rajasthan Royals,Sunrisers Hyderabad,S Gopal,JC Buttler,B Kumar,0,1,1.0,,,,,,,,,0,death overs,106
+101,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,1,16.3,Rajasthan Royals,Sunrisers Hyderabad,S Gopal,JC Buttler,B Kumar,4,0,,,,,,,,,,0,death overs,107
+102,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,1,16.4,Rajasthan Royals,Sunrisers Hyderabad,S Gopal,JC Buttler,B Kumar,1,0,,,,,,,,,,0,death overs,111
+103,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,1,16.5,Rajasthan Royals,Sunrisers Hyderabad,JC Buttler,S Gopal,B Kumar,1,0,,,,,,,,,,0,death overs,112
+104,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,1,16.6,Rajasthan Royals,Sunrisers Hyderabad,S Gopal,JC Buttler,B Kumar,1,0,,,,,,,,,,0,death overs,113
+105,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,1,16.7,Rajasthan Royals,Sunrisers Hyderabad,JC Buttler,S Gopal,B Kumar,1,0,,,,,,,,,,0,death overs,114
+106,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,1,17.1,Rajasthan Royals,Sunrisers Hyderabad,JC Buttler,S Gopal,Rashid Khan,0,0,,,,,,,,,,0,death overs,115
+107,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,1,17.2,Rajasthan Royals,Sunrisers Hyderabad,JC Buttler,S Gopal,Rashid Khan,0,0,,,,,,bowled,JC Buttler,,,1,death overs,115
+108,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,1,17.3,Rajasthan Royals,Sunrisers Hyderabad,DS Kulkarni,S Gopal,Rashid Khan,1,0,,,,,,,,,,0,death overs,115
+109,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,1,17.4,Rajasthan Royals,Sunrisers Hyderabad,S Gopal,DS Kulkarni,Rashid Khan,0,0,,,,,,,,,,0,death overs,116
+110,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,1,17.5,Rajasthan Royals,Sunrisers Hyderabad,S Gopal,DS Kulkarni,Rashid Khan,0,0,,,,,,,,,,0,death overs,116
+111,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,1,17.6,Rajasthan Royals,Sunrisers Hyderabad,S Gopal,DS Kulkarni,Rashid Khan,0,1,,,,1.0,,,,,,0,death overs,116
+112,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,1,18.1,Rajasthan Royals,Sunrisers Hyderabad,S Gopal,DS Kulkarni,B Kumar,2,0,,,,,,,,,,0,death overs,117
+113,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,1,18.2,Rajasthan Royals,Sunrisers Hyderabad,S Gopal,DS Kulkarni,B Kumar,0,0,,,,,,,,,,0,death overs,119
+114,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,1,18.3,Rajasthan Royals,Sunrisers Hyderabad,S Gopal,DS Kulkarni,B Kumar,1,0,,,,,,,,,,0,death overs,119
+115,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,1,18.4,Rajasthan Royals,Sunrisers Hyderabad,DS Kulkarni,S Gopal,B Kumar,0,0,,,,,,,,,,0,death overs,120
+116,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,1,18.5,Rajasthan Royals,Sunrisers Hyderabad,DS Kulkarni,S Gopal,B Kumar,1,0,,,,,,,,,,0,death overs,120
+117,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,1,18.6,Rajasthan Royals,Sunrisers Hyderabad,S Gopal,DS Kulkarni,B Kumar,0,1,1.0,,,,,,,,,0,death overs,121
+118,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,1,18.7,Rajasthan Royals,Sunrisers Hyderabad,S Gopal,DS Kulkarni,B Kumar,0,0,,,,,,caught,S Gopal,,,1,death overs,122
+119,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,1,19.1,Rajasthan Royals,Sunrisers Hyderabad,JD Unadkat,DS Kulkarni,S Kaul,0,0,,,,,,,,,,0,death overs,122
+120,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,1,19.2,Rajasthan Royals,Sunrisers Hyderabad,JD Unadkat,DS Kulkarni,S Kaul,1,0,,,,,,run out,JD Unadkat,,,1,death overs,122
+121,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,1,19.3,Rajasthan Royals,Sunrisers Hyderabad,B Laughlin,DS Kulkarni,S Kaul,1,0,,,,,,,,,,0,death overs,123
+122,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,1,19.4,Rajasthan Royals,Sunrisers Hyderabad,DS Kulkarni,B Laughlin,S Kaul,1,0,,,,,,,,,,0,death overs,124
+123,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,1,19.5,Rajasthan Royals,Sunrisers Hyderabad,B Laughlin,DS Kulkarni,S Kaul,0,0,,,,,,,,,,0,death overs,125
+124,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,1,19.6,Rajasthan Royals,Sunrisers Hyderabad,B Laughlin,DS Kulkarni,S Kaul,0,0,,,,,,,,,,0,death overs,125
+125,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,2,0.1,Sunrisers Hyderabad,Rajasthan Royals,WP Saha,S Dhawan,DS Kulkarni,0,0,,,,,,,,,,0,powerplay,0
+126,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,2,0.2,Sunrisers Hyderabad,Rajasthan Royals,WP Saha,S Dhawan,DS Kulkarni,1,0,,,,,,,,,,0,powerplay,0
+127,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,2,0.3,Sunrisers Hyderabad,Rajasthan Royals,S Dhawan,WP Saha,DS Kulkarni,0,0,,,,,,,,,,0,powerplay,1
+128,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,2,0.4,Sunrisers Hyderabad,Rajasthan Royals,S Dhawan,WP Saha,DS Kulkarni,0,0,,,,,,,,,,0,powerplay,1
+129,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,2,0.5,Sunrisers Hyderabad,Rajasthan Royals,S Dhawan,WP Saha,DS Kulkarni,0,0,,,,,,,,,,0,powerplay,1
+130,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,2,0.6,Sunrisers Hyderabad,Rajasthan Royals,S Dhawan,WP Saha,DS Kulkarni,0,0,,,,,,,,,,0,powerplay,1
+131,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,2,1.1,Sunrisers Hyderabad,Rajasthan Royals,WP Saha,S Dhawan,JD Unadkat,4,0,,,,,,,,,,0,powerplay,1
+132,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,2,1.2,Sunrisers Hyderabad,Rajasthan Royals,WP Saha,S Dhawan,JD Unadkat,0,0,,,,,,,,,,0,powerplay,5
+133,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,2,1.3,Sunrisers Hyderabad,Rajasthan Royals,WP Saha,S Dhawan,JD Unadkat,0,1,1.0,,,,,,,,,0,powerplay,5
+134,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,2,1.4,Sunrisers Hyderabad,Rajasthan Royals,WP Saha,S Dhawan,JD Unadkat,0,0,,,,,,caught,WP Saha,,,1,powerplay,6
+135,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,2,1.5,Sunrisers Hyderabad,Rajasthan Royals,S Dhawan,KS Williamson,JD Unadkat,0,0,,,,,,,,,,0,powerplay,6
+136,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,2,1.6,Sunrisers Hyderabad,Rajasthan Royals,S Dhawan,KS Williamson,JD Unadkat,4,0,,,,,,,,,,0,powerplay,6
+137,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,2,1.7,Sunrisers Hyderabad,Rajasthan Royals,S Dhawan,KS Williamson,JD Unadkat,1,0,,,,,,,,,,0,powerplay,10
+138,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,2,2.1,Sunrisers Hyderabad,Rajasthan Royals,S Dhawan,KS Williamson,DS Kulkarni,2,0,,,,,,,,,,0,powerplay,11
+139,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,2,2.2,Sunrisers Hyderabad,Rajasthan Royals,S Dhawan,KS Williamson,DS Kulkarni,4,0,,,,,,,,,,0,powerplay,13
+140,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,2,2.3,Sunrisers Hyderabad,Rajasthan Royals,S Dhawan,KS Williamson,DS Kulkarni,0,0,,,,,,,,,,0,powerplay,17
+141,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,2,2.4,Sunrisers Hyderabad,Rajasthan Royals,S Dhawan,KS Williamson,DS Kulkarni,0,0,,,,,,,,,,0,powerplay,17
+142,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,2,2.5,Sunrisers Hyderabad,Rajasthan Royals,S Dhawan,KS Williamson,DS Kulkarni,6,0,,,,,,,,,,0,powerplay,17
+143,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,2,2.6,Sunrisers Hyderabad,Rajasthan Royals,S Dhawan,KS Williamson,DS Kulkarni,0,1,1.0,,,,,,,,,0,powerplay,23
+144,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,2,2.7,Sunrisers Hyderabad,Rajasthan Royals,S Dhawan,KS Williamson,DS Kulkarni,0,0,,,,,,,,,,0,powerplay,24
+145,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,2,3.1,Sunrisers Hyderabad,Rajasthan Royals,KS Williamson,S Dhawan,JD Unadkat,0,0,,,,,,,,,,0,powerplay,24
+146,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,2,3.2,Sunrisers Hyderabad,Rajasthan Royals,KS Williamson,S Dhawan,JD Unadkat,0,0,,,,,,,,,,0,powerplay,24
+147,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,2,3.3,Sunrisers Hyderabad,Rajasthan Royals,KS Williamson,S Dhawan,JD Unadkat,4,0,,,,,,,,,,0,powerplay,24
+148,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,2,3.4,Sunrisers Hyderabad,Rajasthan Royals,KS Williamson,S Dhawan,JD Unadkat,0,0,,,,,,,,,,0,powerplay,28
+149,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,2,3.5,Sunrisers Hyderabad,Rajasthan Royals,KS Williamson,S Dhawan,JD Unadkat,6,0,,,,,,,,,,0,powerplay,28
+150,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,2,3.6,Sunrisers Hyderabad,Rajasthan Royals,KS Williamson,S Dhawan,JD Unadkat,2,0,,,,,,,,,,0,powerplay,34
+151,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,2,4.1,Sunrisers Hyderabad,Rajasthan Royals,S Dhawan,KS Williamson,K Gowtham,0,0,,,,,,,,,,0,powerplay,36
+152,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,2,4.2,Sunrisers Hyderabad,Rajasthan Royals,S Dhawan,KS Williamson,K Gowtham,4,0,,,,,,,,,,0,powerplay,36
+153,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,2,4.3,Sunrisers Hyderabad,Rajasthan Royals,S Dhawan,KS Williamson,K Gowtham,4,0,,,,,,,,,,0,powerplay,40
+154,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,2,4.4,Sunrisers Hyderabad,Rajasthan Royals,S Dhawan,KS Williamson,K Gowtham,1,0,,,,,,,,,,0,powerplay,44
+155,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,2,4.5,Sunrisers Hyderabad,Rajasthan Royals,KS Williamson,S Dhawan,K Gowtham,0,0,,,,,,,,,,0,powerplay,45
+156,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,2,4.6,Sunrisers Hyderabad,Rajasthan Royals,KS Williamson,S Dhawan,K Gowtham,0,0,,,,,,,,,,0,powerplay,45
+157,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,2,5.1,Sunrisers Hyderabad,Rajasthan Royals,S Dhawan,KS Williamson,B Laughlin,1,1,,1.0,,,,,,,,0,powerplay,45
+158,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,2,5.2,Sunrisers Hyderabad,Rajasthan Royals,KS Williamson,S Dhawan,B Laughlin,0,0,,,,,,,,,,0,powerplay,47
+159,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,2,5.3,Sunrisers Hyderabad,Rajasthan Royals,KS Williamson,S Dhawan,B Laughlin,1,0,,,,,,,,,,0,powerplay,47
+160,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,2,5.4,Sunrisers Hyderabad,Rajasthan Royals,S Dhawan,KS Williamson,B Laughlin,4,0,,,,,,,,,,0,powerplay,48
+161,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,2,5.5,Sunrisers Hyderabad,Rajasthan Royals,S Dhawan,KS Williamson,B Laughlin,0,0,,,,,,,,,,0,powerplay,52
+162,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,2,5.6,Sunrisers Hyderabad,Rajasthan Royals,S Dhawan,KS Williamson,B Laughlin,1,0,,,,,,,,,,0,powerplay,52
+163,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,2,5.7,Sunrisers Hyderabad,Rajasthan Royals,KS Williamson,S Dhawan,B Laughlin,4,0,,,,,,,,,,0,middle overs,53
+164,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,2,6.1,Sunrisers Hyderabad,Rajasthan Royals,S Dhawan,KS Williamson,S Gopal,4,0,,,,,,,,,,0,middle overs,57
+165,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,2,6.2,Sunrisers Hyderabad,Rajasthan Royals,S Dhawan,KS Williamson,S Gopal,1,0,,,,,,,,,,0,middle overs,61
+166,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,2,6.3,Sunrisers Hyderabad,Rajasthan Royals,KS Williamson,S Dhawan,S Gopal,0,0,,,,,,,,,,0,middle overs,62
+167,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,2,6.4,Sunrisers Hyderabad,Rajasthan Royals,KS Williamson,S Dhawan,S Gopal,1,0,,,,,,,,,,0,middle overs,62
+168,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,2,6.5,Sunrisers Hyderabad,Rajasthan Royals,S Dhawan,KS Williamson,S Gopal,0,0,,,,,,,,,,0,middle overs,63
+169,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,2,6.6,Sunrisers Hyderabad,Rajasthan Royals,S Dhawan,KS Williamson,S Gopal,1,0,,,,,,,,,,0,middle overs,63
+170,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,2,7.1,Sunrisers Hyderabad,Rajasthan Royals,S Dhawan,KS Williamson,BA Stokes,4,0,,,,,,,,,,0,middle overs,64
+171,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,2,7.2,Sunrisers Hyderabad,Rajasthan Royals,S Dhawan,KS Williamson,BA Stokes,4,0,,,,,,,,,,0,middle overs,68
+172,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,2,7.3,Sunrisers Hyderabad,Rajasthan Royals,S Dhawan,KS Williamson,BA Stokes,1,0,,,,,,,,,,0,middle overs,72
+173,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,2,7.4,Sunrisers Hyderabad,Rajasthan Royals,KS Williamson,S Dhawan,BA Stokes,1,0,,,,,,,,,,0,middle overs,73
+174,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,2,7.5,Sunrisers Hyderabad,Rajasthan Royals,S Dhawan,KS Williamson,BA Stokes,0,1,1.0,,,,,,,,,0,middle overs,74
+175,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,2,7.6,Sunrisers Hyderabad,Rajasthan Royals,S Dhawan,KS Williamson,BA Stokes,0,0,,,,,,,,,,0,middle overs,75
+176,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,2,7.7,Sunrisers Hyderabad,Rajasthan Royals,S Dhawan,KS Williamson,BA Stokes,0,0,,,,,,,,,,0,middle overs,75
+177,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,2,8.1,Sunrisers Hyderabad,Rajasthan Royals,KS Williamson,S Dhawan,S Gopal,1,0,,,,,,,,,,0,middle overs,75
+178,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,2,8.2,Sunrisers Hyderabad,Rajasthan Royals,S Dhawan,KS Williamson,S Gopal,1,0,,,,,,,,,,0,middle overs,76
+179,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,2,8.3,Sunrisers Hyderabad,Rajasthan Royals,KS Williamson,S Dhawan,S Gopal,0,0,,,,,,,,,,0,middle overs,77
+180,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,2,8.4,Sunrisers Hyderabad,Rajasthan Royals,KS Williamson,S Dhawan,S Gopal,0,0,,,,,,,,,,0,middle overs,77
+181,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,2,8.5,Sunrisers Hyderabad,Rajasthan Royals,KS Williamson,S Dhawan,S Gopal,1,0,,,,,,,,,,0,middle overs,77
+182,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,2,8.6,Sunrisers Hyderabad,Rajasthan Royals,S Dhawan,KS Williamson,S Gopal,1,0,,,,,,,,,,0,middle overs,78
+183,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,2,9.1,Sunrisers Hyderabad,Rajasthan Royals,S Dhawan,KS Williamson,BA Stokes,4,0,,,,,,,,,,0,middle overs,79
+184,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,2,9.2,Sunrisers Hyderabad,Rajasthan Royals,S Dhawan,KS Williamson,BA Stokes,0,0,,,,,,,,,,0,middle overs,83
+185,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,2,9.3,Sunrisers Hyderabad,Rajasthan Royals,S Dhawan,KS Williamson,BA Stokes,4,0,,,,,,,,,,0,middle overs,83
+186,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,2,9.4,Sunrisers Hyderabad,Rajasthan Royals,S Dhawan,KS Williamson,BA Stokes,0,0,,,,,,,,,,0,middle overs,87
+187,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,2,9.5,Sunrisers Hyderabad,Rajasthan Royals,S Dhawan,KS Williamson,BA Stokes,1,0,,,,,,,,,,0,middle overs,87
+188,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,2,9.6,Sunrisers Hyderabad,Rajasthan Royals,KS Williamson,S Dhawan,BA Stokes,1,0,,,,,,,,,,0,middle overs,88
+189,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,2,10.1,Sunrisers Hyderabad,Rajasthan Royals,KS Williamson,S Dhawan,S Gopal,0,0,,,,,,,,,,0,middle overs,89
+190,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,2,10.2,Sunrisers Hyderabad,Rajasthan Royals,KS Williamson,S Dhawan,S Gopal,1,0,,,,,,,,,,0,middle overs,89
+191,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,2,10.3,Sunrisers Hyderabad,Rajasthan Royals,S Dhawan,KS Williamson,S Gopal,1,0,,,,,,,,,,0,middle overs,90
+192,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,2,10.4,Sunrisers Hyderabad,Rajasthan Royals,KS Williamson,S Dhawan,S Gopal,0,0,,,,,,,,,,0,middle overs,91
+193,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,2,10.5,Sunrisers Hyderabad,Rajasthan Royals,KS Williamson,S Dhawan,S Gopal,4,0,,,,,,,,,,0,middle overs,91
+194,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,2,10.6,Sunrisers Hyderabad,Rajasthan Royals,KS Williamson,S Dhawan,S Gopal,1,0,,,,,,,,,,0,middle overs,95
+195,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,2,11.1,Sunrisers Hyderabad,Rajasthan Royals,KS Williamson,S Dhawan,B Laughlin,0,0,,,,,,,,,,0,middle overs,96
+196,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,2,11.2,Sunrisers Hyderabad,Rajasthan Royals,KS Williamson,S Dhawan,B Laughlin,1,0,,,,,,,,,,0,middle overs,96
+197,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,2,11.3,Sunrisers Hyderabad,Rajasthan Royals,S Dhawan,KS Williamson,B Laughlin,0,0,,,,,,,,,,0,middle overs,97
+198,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,2,11.4,Sunrisers Hyderabad,Rajasthan Royals,S Dhawan,KS Williamson,B Laughlin,1,0,,,,,,,,,,0,middle overs,97
+199,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,2,11.5,Sunrisers Hyderabad,Rajasthan Royals,KS Williamson,S Dhawan,B Laughlin,1,0,,,,,,,,,,0,middle overs,98
+200,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,2,11.6,Sunrisers Hyderabad,Rajasthan Royals,S Dhawan,KS Williamson,B Laughlin,4,0,,,,,,,,,,0,middle overs,99
+201,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,2,11.7,Sunrisers Hyderabad,Rajasthan Royals,S Dhawan,KS Williamson,B Laughlin,1,0,,,,,,,,,,0,middle overs,103
+202,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,2,12.1,Sunrisers Hyderabad,Rajasthan Royals,S Dhawan,KS Williamson,DJM Short,4,0,,,,,,,,,,0,middle overs,104
+203,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,2,12.2,Sunrisers Hyderabad,Rajasthan Royals,S Dhawan,KS Williamson,DJM Short,0,0,,,,,,,,,,0,middle overs,108
+204,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,2,12.3,Sunrisers Hyderabad,Rajasthan Royals,S Dhawan,KS Williamson,DJM Short,2,0,,,,,,,,,,0,middle overs,108
+205,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,2,12.4,Sunrisers Hyderabad,Rajasthan Royals,S Dhawan,KS Williamson,DJM Short,0,0,,,,,,,,,,0,middle overs,110
+206,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,2,12.5,Sunrisers Hyderabad,Rajasthan Royals,S Dhawan,KS Williamson,DJM Short,0,0,,,,,,,,,,0,middle overs,110
+207,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,2,12.6,Sunrisers Hyderabad,Rajasthan Royals,S Dhawan,KS Williamson,DJM Short,0,4,,,4.0,,,,,,,0,middle overs,110
+208,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,2,13.1,Sunrisers Hyderabad,Rajasthan Royals,KS Williamson,S Dhawan,JD Unadkat,0,0,,,,,,,,,,0,middle overs,114
+209,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,2,13.2,Sunrisers Hyderabad,Rajasthan Royals,KS Williamson,S Dhawan,JD Unadkat,2,0,,,,,,,,,,0,middle overs,114
+210,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,2,13.3,Sunrisers Hyderabad,Rajasthan Royals,KS Williamson,S Dhawan,JD Unadkat,0,0,,,,,,,,,,0,middle overs,116
+211,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,2,13.4,Sunrisers Hyderabad,Rajasthan Royals,KS Williamson,S Dhawan,JD Unadkat,2,0,,,,,,,,,,0,middle overs,116
+212,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,2,13.5,Sunrisers Hyderabad,Rajasthan Royals,KS Williamson,S Dhawan,JD Unadkat,1,0,,,,,,,,,,0,middle overs,118
+213,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,2,13.6,Sunrisers Hyderabad,Rajasthan Royals,S Dhawan,KS Williamson,JD Unadkat,1,0,,,,,,,,,,0,middle overs,119
+214,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,2,14.1,Sunrisers Hyderabad,Rajasthan Royals,S Dhawan,KS Williamson,DJM Short,1,0,,,,,,,,,,0,middle overs,120
+215,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,2,14.2,Sunrisers Hyderabad,Rajasthan Royals,KS Williamson,S Dhawan,DJM Short,1,0,,,,,,,,,,0,middle overs,121
+216,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,2,14.3,Sunrisers Hyderabad,Rajasthan Royals,S Dhawan,KS Williamson,DJM Short,0,0,,,,,,,,,,0,middle overs,122
+217,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,2,14.4,Sunrisers Hyderabad,Rajasthan Royals,S Dhawan,KS Williamson,DJM Short,1,0,,,,,,,,,,0,middle overs,122
+218,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,2,14.5,Sunrisers Hyderabad,Rajasthan Royals,KS Williamson,S Dhawan,DJM Short,0,0,,,,,,,,,,0,middle overs,123
+219,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,2,14.6,Sunrisers Hyderabad,Rajasthan Royals,KS Williamson,S Dhawan,DJM Short,0,0,,,,,,,,,,0,middle overs,123
+220,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,2,15.1,Sunrisers Hyderabad,Rajasthan Royals,S Dhawan,KS Williamson,DS Kulkarni,0,0,,,,,,,,,,0,middle overs,123
+221,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,2,15.2,Sunrisers Hyderabad,Rajasthan Royals,S Dhawan,KS Williamson,DS Kulkarni,0,0,,,,,,,,,,0,middle overs,123
+222,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,2,15.3,Sunrisers Hyderabad,Rajasthan Royals,S Dhawan,KS Williamson,DS Kulkarni,0,0,,,,,,,,,,0,middle overs,123
+223,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,2,15.4,Sunrisers Hyderabad,Rajasthan Royals,S Dhawan,KS Williamson,DS Kulkarni,0,0,,,,,,,,,,0,middle overs,123
+224,1136564,2018,2018-04-09,Rajiv Gandhi International Stadium,2,15.5,Sunrisers Hyderabad,Rajasthan Royals,S Dhawan,KS Williamson,DS Kulkarni,4,0,,,,,,,,,,0,middle overs,123
