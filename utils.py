@@ -79,3 +79,52 @@ def replace_team_name(df, old_name, new_name):
     df.replace(old_name, new_name)
     return df
 
+def compute_total_runs(df):
+    """
+
+    :param df:
+    :return:
+    >>> test_df = pd.DataFrame({'ball': {0: 0.1,
+    ... 1: 0.2,
+    ... 2: 0.3,
+    ... 3: 0.4,
+    ... 4: 0.4,
+    ... 5: 0.5,
+    ... 6: 0.6,
+    ... 7: 1.1,
+    ... 8: 1.2,
+    ... 9: 1.3, 10: 1.4, 11: 1.5, 12: 1.6, 13: 2.1, 14: 2.2, 15: 2.3, 16: 2.4, 17: 2.5, 18: 2.6, 19: 3.1},
+    ... 'runs_off_bat': {0: 0, 1: 1, 2: 0, 3: 0, 4: 4, 5: 0, 6: 0, 7: 0, 8: 0, 9: 0, 10: 2, 11: 0, 12: 3, 13: 4, 14: 0, 15: 4, 16: 1, 17: 1, 18: 0, 19: 0},
+    ... 'extras': {0: 0, 1: 0, 2: 0, 3: 1, 4: 0, 5: 0, 6: 0, 7: 0, 8: 0, 9: 0, 10: 0, 11: 0, 12: 0, 13: 0, 14: 0, 15: 0, 16: 0, 17: 0, 18: 0, 19: 0}})
+
+    >>> compute_total_runs(test_df)
+        ball  runs_off_bat  extras  total_runs_scored
+    0    0.1             0       0                  0
+    1    0.2             1       0                  0
+    2    0.3             0       0                  1
+    3    0.4             0       1                  1
+    4    0.4             4       0                  2
+    5    0.5             0       0                  6
+    6    0.6             0       0                  6
+    7    1.1             0       0                  6
+    8    1.2             0       0                  6
+    9    1.3             0       0                  6
+    10   1.4             2       0                  6
+    11   1.5             0       0                  8
+    12   1.6             3       0                  8
+    13   2.1             4       0                 11
+    14   2.2             0       0                 15
+    15   2.3             4       0                 15
+    16   2.4             1       0                 19
+    17   2.5             1       0                 20
+    18   2.6             0       0                 21
+    19   3.1             0       0                 21
+    """
+    df['total_runs_scored'] = 0
+    for i in range(1, len(df)):
+        if df['ball'][i] != 0.1 or (df['ball'][i] == 0.1 and df['ball'][i - 1] == 0.1):
+            df['total_runs_scored'][i] = df['total_runs_scored'][i - 1] + df['runs_off_bat'][i - 1] + df['extras'][
+                i - 1]
+    return df
+
+
