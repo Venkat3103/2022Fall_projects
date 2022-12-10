@@ -160,6 +160,62 @@ def compute_team_score_and_target(df):
     return df_inn1, df_inn2
 
 
+def compute_run_rate(df):
+    """
+  computes the run rate for each of the phases based on the runs scored and the balls bowled in that phase
+  :param df: dataframe updated with run rate
+
+  >>> test_df = pd.DataFrame({'match_id': {0: 1136561, 1: 1136561, 2: 1136561},
+  ... 'phase': {0: 'death overs', 1: 'middle overs', 2: 'powerplay'},
+  ... 'batting_team': {0: 'Mumbai Indians',
+  ...  1: 'Mumbai Indians',
+  ... 2: 'Mumbai Indians'},
+  ... 'bowling_team': {0: 'Chennai Super Kings',
+  ... 1: 'Chennai Super Kings',
+  ... 2: 'Chennai Super Kings'},
+  ... 'ball': {0: 19.6, 1: 15.6, 2: 5.6},
+  ... 'team_score': {0: 165, 1: 121, 2: 39},
+  ... 'wickets': {0: 0, 1: 2, 2: 2},
+  ... 'balls_bowled': {0: 120.0, 1: 96.0, 2: 36.0},
+  ... 'run_rate': {0: 8.25, 1: 7.5625, 2: 6.5}})
+  >>> expected_out_df = pd.DataFrame({'match_id': {0: 1136561, 1: 1136561, 2: 1136561},
+  ... 'phase': {0: 'death overs', 1: 'middle overs', 2: 'powerplay'},
+  ... 'batting_team': {0: 'Mumbai Indians',
+  ... 1: 'Mumbai Indians',
+  ... 2: 'Mumbai Indians'},
+  ... 'bowling_team': {0: 'Chennai Super Kings',
+  ... 1: 'Chennai Super Kings',
+  ... 2: 'Chennai Super Kings'},
+  ... 'ball': {0: 19.6, 1: 15.6, 2: 5.6},
+  ... 'team_score': {0: 165, 1: 121, 2: 39},
+  ... 'wickets': {0: 0, 1: 2, 2: 2},
+  ... 'balls_bowled': {0: 120.0, 1: 96.0, 2: 36.0},
+  ... 'run_rate': {0: 11.0, 1: 8.2, 2: 6.5},
+  ... 'phase_runs': {0: 44, 1: 82, 2: 39},
+  ... 'phase_balls': {0: 24, 1: 60, 2: 36}})
+  >>> expected_out_df.equals(compute_run_rate(test_df))
+  True
+  """
+    df['phase_runs'] = 0
+    df['run_rate'] = 0.0
+    df['phase_balls'] = 0
+    for i in range(0, len(df)):
+        # print(i)
+        if i != len(df) - 1 and df['match_id'][i] == df['match_id'][i + 1]:
+            df['phase_balls'][i] = df['balls_bowled'][i] - df['balls_bowled'][i + 1]
+            df["phase_runs"][i] = df['team_score'][i] - df['team_score'][i + 1]
+            df['run_rate'][i] = df["phase_runs"][i] * 6 / df['phase_balls'][i]
+        else:
+            df["phase_runs"][i] = df['team_score'][i]
+            df['phase_balls'][i] = df['balls_bowled'][i]
+            df['run_rate'][i] = df['team_score'][i] * 6 / df['phase_balls'][i]
+    df["phase_runs"][i] = df['team_score'][i]
+    df['phase_balls'][i] = df['balls_bowled'][i]
+    df['run_rate'][i] = df['team_score'][i] * 6 / df['phase_balls'][i]
+    # print(i)
+    return df
+
+
 def compute_balls_bowled(ball):
     """
     :param ball: the ball number
@@ -173,3 +229,4 @@ def compute_balls_bowled(ball):
     60.0
     """
     return ball * 10 // 10 * 6 + ball * 10 % 10
+
