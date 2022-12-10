@@ -230,3 +230,55 @@ def compute_balls_bowled(ball):
     """
     return ball * 10 // 10 * 6 + ball * 10 % 10
 
+
+def compute_batting_position(df, match_id):
+    """
+
+    :param df:
+    :param match_id:
+    :return:
+
+    >>> pos_df = pd.DataFrame(columns = ["batting_position","match_id","innings","striker"])
+    >>> test_df = pd.read_csv("test_file_1.csv")
+    >>> test_df.drop(columns=["Unnamed: 0"],inplace=True)
+    >>> expected_out_df = pd.DataFrame({'batting_position': {0: 1, 1: 2, 2: 3, 3: 4, 4: 5, 5: 6, 6: 7, 7: 8, 8: 9, 9: 10, 10: 11}, 'match_id': {0: 1136564,  1: 1136564, 2: 1136564, 3: 1136564, 4: 1136564, 5: 1136564, 6: 1136564, 7: 1136564, 8: 1136564, 9: 1136564, 10: 1136564},'innings': {0: 2, 1: 2, 2: 2, 3: 1, 4: 1, 5: 1, 6: 1, 7: 1, 8: 1, 9: 1, 10: 1}, 'striker': {0: 'WP Saha', 1: 'S Dhawan', 2: 'KS Williamson', 3: 'BA Stokes', 4: 'RA Tripathi', 5: 'JC Buttler', 6: 'K Gowtham', 7: 'S Gopal', 8: 'DS Kulkarni', 9: 'JD Unadkat', 10: 'B Laughlin'}})
+    >>> pos_df = pd.concat([pos_df,compute_batting_position(test_df,1136564)])
+    >>> pos_df[['batting_position','innings','striker']]
+       batting_position innings        striker
+    0                 1       1      AM Rahane
+    1                 2       1      DJM Short
+    2                 3       1      SV Samson
+    3                 4       1      BA Stokes
+    4                 5       1    RA Tripathi
+    5                 6       1     JC Buttler
+    6                 7       1      K Gowtham
+    7                 8       1        S Gopal
+    8                 9       1    DS Kulkarni
+    9                10       1     JD Unadkat
+    10               11       1     B Laughlin
+    0                 1       2        WP Saha
+    1                 2       2       S Dhawan
+    2                 3       2  KS Williamson
+    """
+    df1 = df[(df['match_id'] == match_id) & (df['innings'] == 1)]
+    df2 = df[(df['match_id'] == match_id) & (df['innings'] == 2)]
+    player_list_1 = pd.unique(df1[['striker', 'non_striker']].values.ravel())
+    player_list_2 = pd.unique(df2[['striker', 'non_striker']].values.ravel())
+    names1 = list(player_list_1)
+    names2 = list(player_list_2)
+    match_id_list_1 = [match_id] * len(names1)
+    match_id_list_2 = [match_id] * len(names2)
+    inn1_list = [1] * len(names1)
+    inn2_list = [2] * len(names2)
+    zipped1 = list(zip(match_id_list_1, inn1_list, names1))
+    zipped2 = list(zip(match_id_list_2, inn2_list, names2))
+    inn1_df = pd.DataFrame(zipped1, columns=['match_id', 'innings', 'striker'])
+    inn2_df = pd.DataFrame(zipped2, columns=['match_id', 'innings', 'striker'])
+    inn1_df.reset_index(inplace=True)
+    inn1_df.rename(columns={"index": "batting_position"}, inplace=True)
+    inn1_df['batting_position'] = inn1_df['batting_position'] + 1
+    inn2_df.reset_index(inplace=True)
+    inn2_df.rename(columns={"index": "batting_position"}, inplace=True)
+    inn2_df['batting_position'] = inn2_df['batting_position'] + 1
+    return pd.concat([inn1_df, inn2_df])
+
