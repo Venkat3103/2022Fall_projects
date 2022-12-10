@@ -79,6 +79,7 @@ def replace_team_name(df, old_name, new_name):
     df.replace(old_name, new_name)
     return df
 
+
 def compute_total_runs(df):
     """
 
@@ -128,3 +129,18 @@ def compute_total_runs(df):
     return df
 
 
+
+
+def compute_balls_bowled(ball):
+    """
+    :param ball: the ball number
+    :return: the total number of balls bowled till this point in the inning
+
+    >>> compute_balls_bowled(0.1)
+    1.0
+    >>> compute_balls_bowled(19.6)
+    120.0
+    >>> compute_balls_bowled(10.0)
+    60.0
+    """
+    return ball * 10 // 10 * 6 + ball * 10 % 10
