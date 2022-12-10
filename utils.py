@@ -44,15 +44,38 @@ def adjust_ball_number(df):
     True
     """
     for i in range(1, len(df)):
-        if (df['match_id'][i] == df['match_id'][i - 1] and df['innings'][i] == df['innings'][i - 1]):
+        if df['match_id'][i] == df['match_id'][i - 1] and df['innings'][i] == df['innings'][i - 1]:
             if (not (math.isnan(df['wides'][i - 1]))) or (
                     not math.isnan(df['noballs'][i - 1])):
                 df['ball'][i] = df['ball'][i - 1]
-            elif (math.floor(df['ball'][i]) == math.floor(df['ball'][i - 1])):
+            elif math.floor(df['ball'][i]) == math.floor(df['ball'][i - 1]):
                 df['ball'][i] = round(df['ball'][i - 1] + .1, 1)
-                if (round(df['ball'][i] - math.floor(df['ball'][i]), 1) > 0.6):
+                if round(df['ball'][i] - math.floor(df['ball'][i]), 1) > 0.6:
                     curi = i
-                    while (df['ball'][curi] > math.floor(df['ball'][i]) and not df['legbyes'][curi] > 0):
+                    while df['ball'][curi] > math.floor(df['ball'][i]) and not df['legbyes'][curi] > 0:
                         df['ball'][curi] = round(df['ball'][curi] - .1, 1)
                         curi -= 1
     return df
+
+
+def replace_team_name(df, old_name, new_name):
+    """
+    
+    :param df: 
+    :param old_name: old name of the team which has to be replaced
+    :param new_name: new name of the team with which old value has to be replaced
+    :return: modified data frame with new team names
+
+    >>> test_df = pd.DataFrame({'bowling_team': {0: 'Delhi Daredevils', 1: 'Delhi Daredevils',2: 'Delhi Daredevils',3: 'Delhi Daredevils',4: 'Delhi Daredevils'},'batting_team': {0: 'Kings XI Punjab',1: 'Kings XI Punjab',2: 'Kings XI Punjab',3: 'Kings XI Punjab',4: 'Kings XI Punjab'}})
+    >>> replace_team_name(test_df,"Delhi Daredevils","Delhi Capitals")
+           bowling_team     batting_team
+    0  Delhi Daredevils  Kings XI Punjab
+    1  Delhi Daredevils  Kings XI Punjab
+    2  Delhi Daredevils  Kings XI Punjab
+    3  Delhi Daredevils  Kings XI Punjab
+    4  Delhi Daredevils  Kings XI Punjab
+
+    """
+    df.replace(old_name, new_name)
+    return df
+
