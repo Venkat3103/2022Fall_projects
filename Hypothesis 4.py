@@ -13,7 +13,7 @@ import numpy as np
 from pandas import DataFrame
 
 
-def process(unprocessed_df: pd.DataFrame, season: int) -> pd.DataFrame:
+def process(unprocessed_df: DataFrame, season: int) -> pd.DataFrame:
     """
     This function takes in Raw DataFrame and year from the user and filters the DataFrame to keep data related to the
     year 2018.
@@ -54,11 +54,13 @@ def process(unprocessed_df: pd.DataFrame, season: int) -> pd.DataFrame:
     return unprocessed_df
 
 
-def overall_plot(processed_df: pd.DataFrame, season: int) -> tuple[None, pd.DataFrame]:
+def overall_plot(processed_df: DataFrame, season: int) -> tuple[None, pd.DataFrame]:
     """
     This function will use the Processed DataFrame from process() and plot data showing the number of matches won by each team based on the individual decision
 
     param processed_df: Input DataFrame which is the output of process() and also a filtered by year DataFrame
+    :param season: The season year that the needs to be filtered for.
+    :return: A bar chart and a dataframe
 
     >>> t_df = pd.DataFrame({"Team1":["Mumbai Indians","Kolkata Knight Riders", "Kings XI Punjab","Royal Challengers Bangalore", "Royal Challengers Bangalore", "Delhi Capitals"] , "Team2":["Chennai Super Kings", "Chennai Super Kings", "Chennai Super Kings", "Chennai Super Kings", "Chennai Super Kings", "Rajasthan Royals"], "date":["2018-04-07","2018-04-10","2018-04-15", "2018-04-25", "2018-05-05", "2019-05-18"], "venue":["Wankhede Stadium","MA Chidambaram Stadium", "Punjab Cricket Association IS Bindra Stadium","M.Chinnaswamy Stadium","Maharashtra Cricket Association Stadium","Arun Jaitley Stadium"], "toss_winner":["Chennai Super Kings", "Chennai Super Kings","Chennai Super Kings","Chennai Super Kings","Chennai Super Kings","Chennai Super Kings"], "toss_decision":["field","field","field","field","field","field"], "match_winner":["Chennai Super Kings","Chennai Super Kings","Kings XI Punjab","Chennai Super Kings","Chennai Super Kings","Delhi Capitals"], "year":[2018,2018,2018,2018,2018,2018]})
     >>> x,y = overall_plot(t_df, 2018)
@@ -89,11 +91,13 @@ def overall_plot(processed_df: pd.DataFrame, season: int) -> tuple[None, pd.Data
 
 
 # % of games a team won the toss, won the match
-def toss_plot(processed_df: pd.DataFrame, season: int) -> tuple[None, DataFrame]:
+def toss_plot(processed_df: DataFrame, season: int) -> tuple[None, DataFrame]:
     """
     This functions takes the filtered DataFrame as input and plots a piechart of Toss won  vs % matches won and loss.
 
     param processed_df: Input Filtered DataFrame from process()
+    :param season: The season year that the needs to be filtered for.
+    :return: A pie chart and a dataframe
 
     >>> tp_df = pd.DataFrame({"Team1":["Mumbai Indians","Kolkata Knight Riders", "Kings XI Punjab","Royal Challengers Bangalore", "Royal Challengers Bangalore", "Delhi Capitals"] , "Team2":["Chennai Super Kings", "Chennai Super Kings", "Chennai Super Kings", "Chennai Super Kings", "Chennai Super Kings", "Rajasthan Royals"], "date":["2018-04-07","2018-04-10","2018-04-15", "2018-04-25", "2018-05-05", "2019-05-18"], "venue":["Wankhede Stadium","MA Chidambaram Stadium", "Punjab Cricket Association IS Bindra Stadium","M.Chinnaswamy Stadium","Maharashtra Cricket Association Stadium","Arun Jaitley Stadium"], "toss_winner":["Chennai Super Kings", "Chennai Super Kings","Chennai Super Kings","Chennai Super Kings","Chennai Super Kings","Chennai Super Kings"], "toss_decision":["field","field","field","field","field","field"], "match_winner":["Chennai Super Kings","Chennai Super Kings","Kings XI Punjab","Chennai Super Kings","Chennai Super Kings","Delhi Capitals"], "year":[2018,2018,2018,2018,2018,2018]})
     >>> x,y = toss_plot(tp_df, 2018)
@@ -104,8 +108,6 @@ def toss_plot(processed_df: pd.DataFrame, season: int) -> tuple[None, DataFrame]
 
     >>> type(y["count"][0])
     <class 'numpy.int64'>
-
-    >>>
 
     """
 
@@ -127,11 +129,14 @@ def toss_plot(processed_df: pd.DataFrame, season: int) -> tuple[None, DataFrame]
     return fig.show(), count_df
 
 
-def decision_plot(process_data: pd.DataFrame, season: int) -> tuple[None, DataFrame]:
+def decision_plot(process_data: DataFrame, season: int) -> tuple[None, DataFrame]:
     """
-    This functions takes the filtered DataFrame as input and plots a piechart of Winning Toss Decision vs % matches won and loss.
+    This functions takes the filtered DataFrame as input and plots a piechart of Winning Toss Decision vs % matches won
+    and loss.
 
     param process_data: Input Filtered DataFrame from process()
+    :param season: The season year that the needs to be filtered for.
+    :return: A pie chart and a dataframe
 
     >>> dp_df = pd.DataFrame({"Team1":["Mumbai Indians","Kolkata Knight Riders", "Kings XI Punjab","Royal Challengers Bangalore", "Royal Challengers Bangalore", "Delhi Capitals"] , "Team2":["Chennai Super Kings", "Chennai Super Kings", "Chennai Super Kings", "Chennai Super Kings", "Chennai Super Kings", "Rajasthan Royals"], "date":["2018-04-07","2018-04-10","2018-04-15", "2018-04-25", "2018-05-05", "2019-05-18"], "venue":["Wankhede Stadium","MA Chidambaram Stadium", "Punjab Cricket Association IS Bindra Stadium","M.Chinnaswamy Stadium","Maharashtra Cricket Association Stadium","Arun Jaitley Stadium"], "toss_winner":["Chennai Super Kings", "Chennai Super Kings","Chennai Super Kings","Chennai Super Kings","Chennai Super Kings","Chennai Super Kings"], "toss_decision":["field","field","field","field","field","field"], "match_winner":["Chennai Super Kings","Chennai Super Kings","Kings XI Punjab","Chennai Super Kings","Chennai Super Kings","Delhi Capitals"], "year":[2018,2018,2018,2018,2018,2018]})
     >>> x, y = decision_plot(dp_df, 2018)
