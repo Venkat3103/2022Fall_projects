@@ -64,7 +64,7 @@ Step 2 : How consistent each team were while selecting players for each match ? 
 
 Step 3 : Plot the overall team consistency vs Number of Matches Won by the team
 
-![img_4.png](img_4.png)
+![img_4.png](img_4.png) 
 
 Conclusion:
 
