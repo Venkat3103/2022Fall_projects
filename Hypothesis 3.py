@@ -22,13 +22,6 @@ def SeasonData(df: DataFrame, season: int) -> DataFrame:
     :season: Year value that is provided by the user. Data will be filtered according to the year mentioned.
     return: It returns a dataframe with all data with respect to the year mentioned in the function
 
-    >>> df1 = pd.read_csv("teamsheet.csv") # doctest: +ELLIPSIS
-    >>> df1 # doctest: +ELLIPSIS
-          Unnamed: 0  ...          player11
-    0              0  ...  Mukesh Choudhary
-    1              1  ...          KK Ahmed
-    2              2  ...    M Muralitharan
-    ...
 
     >>> d1= SeasonData(pd.DataFrame({"Unnamed: 0": [0,1,2], "Team":["Chennai Super Kings", "Sunrisers Hyderabad", "Rajasthan Royals" ] , "date": ["2018-04-07", "2019-05-17", "2018-04-01" ], "player1": ["A1","B1","C1"] ,"player2": ["A2","B2","C2"] , "player3": ["A3","B3","C3"] , "player4": ["A4","B4","C4"] , "player5": ["A5","B5","C5"] ,"player6": ["A6","B6","C6"],"player7": ["A7","B7","C7"] ,"player8": ["A8","B8","C8"] ,"player9": ["A9","B9","C9"] ,"player10": ["A10","B10","C10"] ,"player11": ["A11","B11","C11"],"year": [2018,2019,2018]}),2018)
     >>> d1["Team"].tolist()
