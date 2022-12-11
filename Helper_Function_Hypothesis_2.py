@@ -284,5 +284,43 @@ def batting_stat(df_2019):
     return df_sorted
 
 
+def bowling_stat(df_2019):
+    """
+    This function returns the overall top 15 bowlers of IPL 2019 for each venue with bowling stats
+    such as Wickets taken and Economy rate.
+
+    :param df_2019: dataframe with ball by ball data of IPL 2019
+    :return: df_sorted: Sorted dataframe with top 15 bowlers for each venue
+    >>> test_df = pd.read_csv("2019_test.csv")
+    >>> out_df = bowling_stat(test_df).head()
+
+    Bowler	    Balls Bowled	Runs Conceded	Wickets Taken	innings_played	Economy Rate	Balls Per Wicket	Bowling Average	    venue	            bowling_team
+0	K Rabada	    145	        198.0	            10	              6	            8.193103	14.5	                19.8	    Arun Jaitley Stadium	Delhi Capitals
+1	TA Boult	    24	        27.0	            2	              1         	6.750000	12.0	                13.5	    Arun Jaitley Stadium	Delhi Capitals
+2	Kuldeep Yadav	24	        41.0	            2	              1	          10.250000	    12.0	                20.5	    Arun Jaitley Stadium	Kolkata Knight Riders
+3	AR Patel	    138	        115.0	            5	              6	           5.000000	    27.6	                23.0	    Arun Jaitley Stadium	Delhi Capitals
+4	YS Chahal	    24	        41.0	            2	              1	          10.250000	    12.0	                20.5	    Arun Jaitley Stadium	Royal Challengers Bangalore
+    """
+
+    appended_data = []
+    venue_list_2019 = df_2019['venue'].unique().tolist()
+    for venue in venue_list_2019:
+        data = df_2019[df_2019['venue'] == venue]
+        data1 = get_bowling_data(data)
+        df = data1.nlargest(15, ['Wickets Taken', 'Economy Rate'])
+        df['venue'] = venue
+        appended_data.append(df)
+    appended_data = pd.concat(appended_data)
+    appended_data = appended_data.sort_values(by=['venue'])
+
+    df_2019 = df_2019.rename(columns={'bowler': 'Bowler'})
+    df_merge = pd.merge(appended_data, df_2019[['Bowler', 'bowling_team']], on='Bowler')
+    df_merge = df_merge.drop_duplicates()
+    df_sorted = df_merge.sort_values(by=['venue']).reset_index()
+    df_sorted = df_sorted.drop(columns=['index'])
+    return df_sorted
+
+
+
 
 
