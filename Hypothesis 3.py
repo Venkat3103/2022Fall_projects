@@ -2,17 +2,19 @@
 Hypothesis 3: Consistency in Team selection improves chances of winning the match
 
 """
-from typing import Tuple
+from typing import Tuple, Any
 
 import pandas as pd
 import plotly.graph_objects as go
-from pandas import DataFrame
+from pandas import DataFrame, Series
+
 from plotly.subplots import make_subplots
 
 
 def SeasonData(df: DataFrame, season: int) -> DataFrame:
     """
-    This function takes the main teamsheet.csv file to filter it according to the season year and gives it as output dataframe.
+    This function takes the main teamsheet.csv file to filter it according to the season year and gives it as output
+    dataframe.
 
     df: The Team DataFrame which provides information about the players played for a team for each season
     :season: Year value that is provided by the user. Data will be filtered according to the year mentioned.
@@ -42,9 +44,16 @@ def SeasonData(df: DataFrame, season: int) -> DataFrame:
     # preprocessing of the dataframe
     df['date'] = pd.to_datetime(df['date'])
     df['year'] = pd.DatetimeIndex(df['date']).year
-    df.drop(columns="Unnamed: 0", inplace=True)
+
+    if "Unnamed: 0" in df.columns:
+        df.drop(columns="Unnamed: 0", inplace=True)
 
     team_season = pd.DataFrame(df[df["year"] == season].sort_values(by=['Team', 'date']))
+
+    team_season = team_season.astype({"Team": "str", "player1": "str", "player2": "str", "player3": "str",
+                                      "player4": "str", "player5": "str", "player6": "str", "player7": "str",
+                                      "player8": "str", "player9": "str", "player10": "str", "player11": "str",
+                                      "year": "int"})
 
     # Returns Dataframe for a season with variable name like "season_2018" if season = 2018
 
@@ -77,7 +86,6 @@ def PlayerCount(season_df: DataFrame) -> DataFrame:
     count      int64
     dtype: object
 
-    ToDo: To convert datatypes of the input dataframe columns to its respective datatype
     """
 
     p1 = season_df.groupby(['Team', 'player1'])['player1'].count().to_frame().rename(columns={"player1": "count1"})
@@ -123,7 +131,7 @@ def PlayerCount(season_df: DataFrame) -> DataFrame:
     return count_df
 
 
-def PlayerConsistency(df_count: DataFrame) -> tuple[None, DataFrame]:
+def PlayerConsistency(df_count: DataFrame, team_name: 'str') -> tuple[None, Any]:
     """
     This Function takes the output DataFrame from function PlayerCount() as an input and calculate the consistency aka
     % of matches played by a player for his team throughout the season. The output is a bar chart of each team showing
@@ -132,15 +140,17 @@ def PlayerConsistency(df_count: DataFrame) -> tuple[None, DataFrame]:
     param df_count: DataFrame which will provide the team name , each of its player name and how many matches the
             player played imm total for a whole season.
 
+    param df_count: The name of the Team for which the Player Consistency needs to be checked for.
+
     >>> df = pd.DataFrame({"Team":["Chennai Super Kings", "Sunrisers Hyderabad", "Rajasthan Royals", "Chennai Super Kings", "Chennai Super Kings", "Sunrisers Hyderabad" ], "player":["A1","B1","C1","A2","A3","B2"], "count":[1,2,1,3,2,1]})
-    >>> PlayerConsistency(df)
+    >>> PlayerConsistency(df, "Chennai Super Kings")
     (None,                   Team player  count  percentage
     3  Chennai Super Kings     A2      3      100.00
     4  Chennai Super Kings     A3      2       66.67
     0  Chennai Super Kings     A1      1       33.33)
 
 
-    >>> x, y = PlayerConsistency(df)
+    >>> x, y = PlayerConsistency(df, "Chennai Super Kings")
     >>> len(y)
     3
 
@@ -148,32 +158,28 @@ def PlayerConsistency(df_count: DataFrame) -> tuple[None, DataFrame]:
     <class 'pandas.core.frame.DataFrame'>
 
     """
-    plot_list = df_count["Team"].unique().tolist()
 
-    for i in plot_list:
-        plot_df = pd.DataFrame()
+    plot_df = df_count[df_count["Team"] == team_name].copy()
 
-        plot_df = df_count[df_count["Team"] == i]
+    plot_df["percentage"] = round((plot_df.loc[:, "count"] / len(plot_df.loc[:, "count"])) * 100, 2)
 
-        plot_df["percentage"] = round((plot_df["count"] / len(plot_df["count"])) * 100, 2)
+    plot_df.sort_values(by=['percentage'], ascending=False, inplace=True)
 
-        plot_df.sort_values(by=['percentage'], ascending=False, inplace=True)
+    x = plot_df["player"]
+    y = plot_df["percentage"]
 
-        x = plot_df["player"]
-        y = plot_df["percentage"]
+    fig = go.Figure(data=[go.Bar(
+        x=x, y=y,
+        text=y,
+        textposition='auto',
+        marker_color='rgb(55, 83, 109)'
+    )])
 
-        fig = go.Figure(data=[go.Bar(
-            x=x, y=y,
-            text=y,
-            textposition='auto',
-            marker_color='rgb(55, 83, 109)'
-        )])
+    fig.update_layout(
+        title_text=f'{team_name} : Players Selection Consistency % for each match',
+        uniformtext=dict(mode="hide", minsize=10))
 
-        fig.update_layout(
-            title_text=f'{i} : Players Selection Consistency % for each match',
-            uniformtext=dict(mode="hide", minsize=10))
-
-        return fig.show(), plot_df
+    return fig.show(), plot_df
 
 
 def TeamConsistency(player_count_df: pd.DataFrame, consistency_threshold: int) -> tuple[None, DataFrame]:
@@ -188,10 +194,6 @@ def TeamConsistency(player_count_df: pd.DataFrame, consistency_threshold: int) -
     param consistency_threshold: A integer describing a percentage value by the user.
     :return: Team's player selection Consistency plot and its DataFrame
 
-    >>> df = pd.DataFrame({"Team":["Chennai Super Kings", "Sunrisers Hyderabad", "Rajasthan Royals", "Chennai Super Kings", "Chennai Super Kings", "Sunrisers Hyderabad" ], "player":["A1","B1","C1","A2","A3","B2"], "count":[1,2,1,3,2,1]})
-    >>> TeamConsistency(df, 2018)
-    []
-
     """
 
     cons_dict = dict()
@@ -199,9 +201,9 @@ def TeamConsistency(player_count_df: pd.DataFrame, consistency_threshold: int) -
     team_list = player_count_df["Team"].unique().tolist()
 
     for i in team_list:
-        cons_df = player_count_df[player_count_df["Team"] == i]
+        cons_df = player_count_df[player_count_df["Team"] == i].copy()
 
-        cons_df["percentage"] = round((cons_df["count"] / len(cons_df["count"])) * 100, 2)
+        cons_df["percentage"] = round((cons_df.loc[:, "count"] / len(cons_df.loc[:, "count"])) * 100, 2)
 
         cons_df.sort_values(by=['percentage'], ascending=False, inplace=True)
 
@@ -220,14 +222,22 @@ def TeamConsistency(player_count_df: pd.DataFrame, consistency_threshold: int) -
         x=x, y=y,
         text=y,
         textposition='auto',
-        marker_color='rgb(55, 83, 109)'
+        marker_color='rgb(55, 83, 109)',
     )])
 
+    # # fig.update_xaxes(title_text="Team")
+    # fig.update_xaxes(
+    #     tickangle=45,
+    #     title_text="% of Matches played for team",
+    #     title_font={"size": 20},
+    #     title_standoff=25)
+
     fig.update_layout(
-        title_text="Team Selection Consistency % for overall season",
+        title_text=f"Team Selection Consistency % for overall season {season_to_check}",
         uniformtext=dict(mode="hide", minsize=10))
 
     return fig.show(), team_cons_df
+
 
 # ----------------------------------------------------------------------------------------------------------------------
 def TossSeasonData(toss_df: DataFrame, season: int) -> DataFrame:
@@ -239,7 +249,6 @@ def TossSeasonData(toss_df: DataFrame, season: int) -> DataFrame:
     param season: Year value that is provided by the user. Data will be filtered according to the year mentioned.
     :return: It returns a dataframe with all data with respect to the year mentioned in the function
 
-    ToDo: Check for datatyping of Function Parameters
 
     >>> t_df = pd.DataFrame({"Team1":["Mumbai Indians","Kolkata Knight Riders", "Kings XI Punjab","Royal Challengers Bangalore", "Royal Challengers Bangalore", "Delhi Capitals"] , "Team2":["Chennai Super Kings", "Chennai Super Kings", "Chennai Super Kings", "Chennai Super Kings", "Chennai Super Kings", "Rajasthan Royals"], "date":["2018-04-07","2018-04-10","2018-04-15", "2018-04-25", "2018-05-05", "2019-05-18"], "venue":["Wankhede Stadium","MA Chidambaram Stadium", "Punjab Cricket Association IS Bindra Stadium","M.Chinnaswamy Stadium","Maharashtra Cricket Association Stadium","Arun Jaitley Stadium"], "toss_winner":["Chennai Super Kings", "Chennai Super Kings","Chennai Super Kings","Chennai Super Kings","Chennai Super Kings","Chennai Super Kings"], "toss_decision":["field","field","field","field","field","field"], "match_winner":["Chennai Super Kings","Chennai Super Kings","Kings XI Punjab","Chennai Super Kings","Chennai Super Kings","Delhi Capitals"], "year":[2018,2018,2018,2018,2018,2019]})
     >>> len(TossSeasonData(t_df, 2018))
@@ -263,6 +272,7 @@ def TossSeasonData(toss_df: DataFrame, season: int) -> DataFrame:
     # Returns Dataframe for a season with variable name like "season_2018" if season = 2018
 
     return match_season
+
 
 def MatchesWon(toss_season_df: DataFrame) -> DataFrame:
     """
@@ -299,8 +309,8 @@ def hypo_plot(MatchWin_df: DataFrame, TeamConsistency_df: DataFrame):
     Creates a Line Plot of Overall Team Selection Consistency vs Number of Matches Won by the team for a season.
     Using this plot one can understand the explanation behind whether it statisfies the Hypothesis 3 or not.
 
-    param MatchWin_df: The output DataFrame of MatchesWon().
-    :param TeamConsistency_df: he output DataFrame of TeamConsistency().
+    param MatchWin_df: output DataFrame of TeamConsistency()
+    :param TeamConsistency_df: output DataFrame of TeamConsistency().
     :return: a Line Plot of Overall Team Selection Consistency vs Number of Matches Won by the team for a season.
 
     """
@@ -327,7 +337,7 @@ def hypo_plot(MatchWin_df: DataFrame, TeamConsistency_df: DataFrame):
     )
 
     # Set x-axis title
-    #fig.update_xaxes(title_text="Team")
+    # fig.update_xaxes(title_text="Team")
     fig.update_xaxes(
         tickangle=45,
         title_text="Team",
@@ -344,13 +354,16 @@ def hypo_plot(MatchWin_df: DataFrame, TeamConsistency_df: DataFrame):
 
 
 if __name__ == "__main__":
-    # Defining Parameters
+    # Defining User Parameters
 
     # Which IPL season do you want to check the statistics for ?
-    season_to_check = 2018
+    season_to_check = 2020
 
     # Define the % of matches a player played for his team for a season to count him towards team consistency?
-    consistency_value = 80
+    consistency_value = 40
+
+
+    print(f"The below Team Consistency {consistency_value}% vs Team Wins plots are for the year {season_to_check}")
 
     # ---------------------------------------------------------------------------------------------------------------------
     # Dataframe 1 : Information of matches, teams and players who played for their team  each of the match.
@@ -363,8 +376,9 @@ if __name__ == "__main__":
     player_count = PlayerCount(team_season_data)
 
     # Bar Plot of the % of matches a player played for his team for the season specified
-    Pconsistency_plot, Pconsistency_df = PlayerConsistency(player_count)
-    print(Pconsistency_df)
+    plot_list = player_count["Team"].unique().tolist()
+    for team in plot_list:
+        Pconsistency_plot, Pconsistency_df = PlayerConsistency(player_count, team)
 
     # A Bar Plot of % of Team Consistency, with individual player consistency >= consistency_value of all the players
     # for each team
