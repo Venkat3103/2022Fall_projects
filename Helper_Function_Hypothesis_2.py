@@ -198,3 +198,53 @@ def toss_and_match_wins_per_venue(match_info):
     return total_wins
 
 
+def top_wicket_takers_per_venue(total_venues, merged_data, bowler_info):
+    """
+    returns a dataframe with top 3 wicket takers and bowler info per venue across 3 years and a bar plot for the same.
+    :param bowler_info:
+    :param total_venues: The Venues in which IPL were played from 2018 to 2020.
+    :param merged_data: dataframe with ball by ball data
+    :return dataframe with top 3 wicket takers and bowler info
+
+    >>> venue_list = ['Wankhede Stadium','Punjab Cricket Association IS Bindra Stadium','Eden Gardens','Rajiv Gandhi International Stadium','MA Chidambaram Stadium','Sawai Mansingh Stadium','M.Chinnaswamy Stadium','Maharashtra Cricket Association Stadium','Arun Jaitley Stadium','Holkar Cricket Stadium','Dr. Y.S. Rajasekhara Reddy ACA-VDCA Cricket Stadium','Sheikh Zayed Stadium','Dubai International Cricket Stadium','Sharjah Cricket Stadium']
+    >>> df_test = pd.read_csv("merged_test.csv")
+    >>> df_test1 = pd.read_csv("test3.csv")
+    >>> out_df = top_wicket_takers_per_venue(venue_list,df_test,df_test1).head()
+
+                Venue	                                season	bowler	number_of_wickets	bowling_team	   bowl_type	bowl_style
+0	Arun Jaitley Stadium	                            2019	A Mishra	    8	       Delhi Capitals	    Spin	    LEG_SPIN
+1	Arun Jaitley Stadium	                            2019	K Rabada	    7	       Delhi Capitals	    Pace	    FAST_SEAM
+4	Arun Jaitley Stadium	                            2019	S Lamichhane	7	       Delhi Capitals	    Spin	    LEG_SPIN
+5	Dr. Y.S. Rajasekhara Reddy ACA-VDCA Cricket St...	2019	DL Chahar	    2	       Chennai Super Kings	Pace	    MEDIUM_SEAM
+6	Dr. Y.S. Rajasekhara Reddy ACA-VDCA Cricket St...	2019	DJ Bravo	    2	       Chennai Super Kings	Pace	    MEDIUM_SEAM
+    """
+
+    appended_data = []
+
+    for venue in total_venues:
+        current_venue = merged_data[merged_data['venue'] == venue]
+        wicket_takers_per_venue = current_venue[
+            (current_venue['is_wicket'] == 1) & (current_venue['wicket_type'] != 'run out') &
+            (current_venue['innings'] == 1)][['season', 'bowling_team', 'bowler']].value_counts().to_frame()
+        wicket_takers_per_venue = wicket_takers_per_venue.reset_index()
+        wicket_takers_per_venue = wicket_takers_per_venue.rename(columns={0: 'number_of_wickets'})
+        wicket_takers_per_venue['Venue'] = venue
+        df = wicket_takers_per_venue.nlargest(3, 'number_of_wickets')
+        appended_data.append(df)
+    appended_data = pd.concat(appended_data)
+    appended_data = appended_data.sort_values(by=['Venue'])
+    top_wicket_takers_per_venue_df = appended_data[['Venue', 'season', 'bowler', 'number_of_wickets', 'bowling_team']]
+    top_wicket_takers_per_venue_df = top_wicket_takers_per_venue_df.reset_index()
+    top_wicket_takers_per_venue_df = top_wicket_takers_per_venue_df.drop('index', axis=1)
+    top_wicket_takers_per_venue_df = pd.merge(top_wicket_takers_per_venue_df, bowler_info, on='bowler')
+    sorted_df = top_wicket_takers_per_venue_df.sort_values(by=['Venue'], ascending=True)
+
+    plt.figure()
+    sns.barplot(x='Venue', y="number_of_wickets", hue="bowl_style", data=sorted_df, ci=None)
+    plt.xticks(rotation="vertical")
+    plt.legend(loc='upper left')
+    plt.title("Top 3 wicket takers bowling style per Venue")
+    return sorted_df
+
+
+
