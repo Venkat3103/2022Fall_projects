@@ -78,3 +78,48 @@ def get_batting_data(df: pd.DataFrame):
     batting_data.rename(columns={'striker': 'Player', 'runs_off_bat': 'Runs Scored', 'ball': 'Balls Faced',
                                  'outs': 'Times Dismissed', 'match_id': 'Innings Played'}, inplace=True)
     return batting_data
+
+
+def get_bowling_data(df: pd.DataFrame):
+    """
+        Returns a dataframe with batting statistics for each player using the ball by ball dataframe
+
+        :param df: dataframe with ball by ball data :return: batting_data: dataframe with stats for each batsman such as
+        batting average, strike rate, total balls faced and so on.
+        >>> test_df = pd.read_csv("test_data.csv")
+        >>> out_df = get_bowling_data(test_df)[['Bowler','Balls Bowled','Wickets Taken']]
+        >>> out_df.head()
+
+                Bowler	      Balls Bowled  Wickets Taken
+        0	    A Dananjaya	  24	        0
+        1	    A Mishra	  522	        26
+        2	    A Nortje	  366	        22
+        3	    A Zampa	      66	        2
+        4	    AD Russell	  516	        30
+    """
+
+    t20s_no_wides = df[df['wides'].isnull()]
+    t20s_legal_deliveries = t20s_no_wides[t20s_no_wides['noballs'].isnull()]
+    balls_bowled = t20s_legal_deliveries.groupby('bowler')['ball'].count().to_frame()
+    balls_bowled.reset_index(inplace=True)
+    innings_played = df.groupby('bowler').match_id.nunique()
+    temp = df.copy()
+    temp['wides'] = temp['wides'].fillna(0)
+    temp['noballs'] = temp['noballs'].fillna(0)
+    df['runs_conceded'] = temp['runs_off_bat'] + temp['wides'] + temp['noballs']
+    runs_conceded = df.groupby('bowler')['runs_conceded'].sum().to_frame()
+    runs_conceded.reset_index(inplace=True)
+    bowler_wickets = df[df['wicket_type'] != "run out"]
+    bowler_wickets = bowler_wickets[bowler_wickets['wicket_type'] != "retired hurt"]
+    bowler_wickets = bowler_wickets[bowler_wickets['wicket_type'] != "obstructing the field"]
+    wickets_taken = bowler_wickets.groupby('bowler')['wicket_type'].count().to_frame()
+    wickets_taken.reset_index(inplace=True)
+    bowling_data = pd.merge(
+        pd.merge(pd.merge(balls_bowled, runs_conceded, how="inner", on='bowler'), wickets_taken, how="inner",
+                 on='bowler'), innings_played, on='bowler', how="inner")
+    bowling_data['Economy Rate'] = bowling_data['runs_conceded'] * 6 / bowling_data['ball']
+    bowling_data['Balls Per Wicket'] = bowling_data['ball'] / bowling_data['wicket_type']
+    bowling_data['Bowling Average'] = bowling_data['runs_conceded'] / bowling_data['wicket_type']
+    bowling_data.rename(columns={'bowler': 'Bowler', 'runs_conceded': 'Runs Conceded', 'ball': 'Balls Bowled',
+                                 'wicket_type': 'Wickets Taken', 'match_id': 'innings_played'}, inplace=True)
+    return bowling_data
