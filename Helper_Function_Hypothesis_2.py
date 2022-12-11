@@ -247,4 +247,42 @@ def top_wicket_takers_per_venue(total_venues, merged_data, bowler_info):
     return sorted_df
 
 
+def batting_stat(df_2019):
+    """
+    This function returns the overall top 15 batsman of IPL 2019 for each venue with battings stats
+    such as Batting Average and Runs Scored.
+
+    :param df_2019: dataframe with ball by ball data of IPL 2019
+    :return: df_sorted: Sorted dataframe with top 15 batsman for each venue
+    >>> test_df = pd.read_csv("2019_test.csv")
+    >>> out_df = batting_stat(test_df).head()
+
+    Player	    Runs Scored	Balls Faced	Times Dismissed	Innings Played	Batting Average	Batting Strike Rate	    venue           batting_team
+0	S Dhawan	236	            181	            7	            7	        33.714286	    130.386740	  Arun Jaitley Stadium	Delhi Capitals
+1	SS Iyer	    236	            196	            7	            7	        33.714286	    120.408163	  Arun Jaitley Stadium	Delhi Capitals
+2	RR Pant	1   20	            102	            6	            7	        20.000000	    117.647059	  Arun Jaitley Stadium	Delhi Capitals
+3	AR Patel	76	            56	            2	            6	        38.000000	    135.714286	  Arun Jaitley Stadium	Delhi Capitals
+4	CA Ingram	59	            56	            6	            6	        9.833333	    105.357143	  Arun Jaitley Stadium	Delhi Capitals
+    """
+
+    appended_data = []
+    venue_list_2019 = df_2019['venue'].unique().tolist()
+    for venue in venue_list_2019:
+        data = df_2019[df_2019['venue'] == venue]
+        data1 = get_batting_data(data)
+        df = data1.nlargest(15, ['Runs Scored', 'Batting Average'])
+        df['venue'] = venue
+        appended_data.append(df)
+    appended_data = pd.concat(appended_data)
+    appended_data = appended_data.sort_values(by=['venue'])
+
+    df_2019 = df_2019.rename(columns={'striker': 'Player'})
+    df_merge = pd.merge(appended_data, df_2019[['Player', 'batting_team']], on='Player')
+    df_merge = df_merge.drop_duplicates()
+    df_sorted = df_merge.sort_values(by=['venue']).reset_index()
+    df_sorted = df_sorted.drop(columns=['index'])
+    return df_sorted
+
+
+
 
