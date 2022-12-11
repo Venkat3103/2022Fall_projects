@@ -1,13 +1,15 @@
 """
 Hypothesis 3: Consistency in Team selection improves chances of winning the match
+Author : Burzin Navroze Wadia
+Net ID : bwadia2
 
 """
-from typing import Tuple, Any
 
+# Importing Libraries
+from typing import Tuple, Any
 import pandas as pd
 import plotly.graph_objects as go
 from pandas import DataFrame, Series
-
 from plotly.subplots import make_subplots
 
 
@@ -19,6 +21,7 @@ def SeasonData(df: DataFrame, season: int) -> DataFrame:
     df: The Team DataFrame which provides information about the players played for a team for each season
     :season: Year value that is provided by the user. Data will be filtered according to the year mentioned.
     return: It returns a dataframe with all data with respect to the year mentioned in the function
+
 
     >>> d1= SeasonData(pd.DataFrame({"Unnamed: 0": [0,1,2], "Team":["Chennai Super Kings", "Sunrisers Hyderabad", "Rajasthan Royals" ] , "date": ["2018-04-07", "2019-05-17", "2018-04-01" ], "player1": ["A1","B1","C1"] ,"player2": ["A2","B2","C2"] , "player3": ["A3","B3","C3"] , "player4": ["A4","B4","C4"] , "player5": ["A5","B5","C5"] ,"player6": ["A6","B6","C6"],"player7": ["A7","B7","C7"] ,"player8": ["A8","B8","C8"] ,"player9": ["A9","B9","C9"] ,"player10": ["A10","B10","C10"] ,"player11": ["A11","B11","C11"],"year": [2018,2019,2018]}),2018)
     >>> d1["Team"].tolist()
@@ -131,7 +134,7 @@ def PlayerCount(season_df: DataFrame) -> DataFrame:
     return count_df
 
 
-def PlayerConsistency(df_count: DataFrame, team_name: 'str') -> tuple[None, Any]:
+def PlayerConsistency(df_count: DataFrame, team_name: str) -> tuple[None, Any]:
     """
     This Function takes the output DataFrame from function PlayerCount() as an input and calculate the consistency aka
     % of matches played by a player for his team throughout the season. The output is a bar chart of each team showing
@@ -140,7 +143,9 @@ def PlayerConsistency(df_count: DataFrame, team_name: 'str') -> tuple[None, Any]
     param df_count: DataFrame which will provide the team name , each of its player name and how many matches the
             player played imm total for a whole season.
 
-    param df_count: The name of the Team for which the Player Consistency needs to be checked for.
+    param team_name: The name of the Team for which the Player Consistency needs to be checked for.
+
+    :return: Bar Chart of individual player consistency of each team and its respective dataframe
 
     >>> df = pd.DataFrame({"Team":["Chennai Super Kings", "Sunrisers Hyderabad", "Rajasthan Royals", "Chennai Super Kings", "Chennai Super Kings", "Sunrisers Hyderabad" ], "player":["A1","B1","C1","A2","A3","B2"], "count":[1,2,1,3,2,1]})
     >>> PlayerConsistency(df, "Chennai Super Kings")
@@ -177,7 +182,9 @@ def PlayerConsistency(df_count: DataFrame, team_name: 'str') -> tuple[None, Any]
 
     fig.update_layout(
         title_text=f'{team_name} : Players Selection Consistency % for each match',
-        uniformtext=dict(mode="hide", minsize=10))
+        uniformtext=dict(mode="hide", minsize=10),
+        xaxis_title="Team Player Name",
+        yaxis_title="% of Matches Played")
 
     return fig.show(), plot_df
 
@@ -225,16 +232,13 @@ def TeamConsistency(player_count_df: pd.DataFrame, consistency_threshold: int) -
         marker_color='rgb(55, 83, 109)',
     )])
 
-    # # fig.update_xaxes(title_text="Team")
-    # fig.update_xaxes(
-    #     tickangle=45,
-    #     title_text="% of Matches played for team",
-    #     title_font={"size": 20},
-    #     title_standoff=25)
-
     fig.update_layout(
         title_text=f"Team Selection Consistency % for overall season {season_to_check}",
-        uniformtext=dict(mode="hide", minsize=10))
+        uniformtext=dict(mode="hide", minsize=10),
+        xaxis_title = "Team Name",
+        yaxis_title = f"Overall Team's Consistency (Players Consistent >={consistency_value}%)"
+
+    )
 
     return fig.show(), team_cons_df
 
@@ -357,7 +361,7 @@ if __name__ == "__main__":
     # Defining User Parameters
 
     # Which IPL season do you want to check the statistics for ?
-    season_to_check = 2020
+    season_to_check = 2018
 
     # Define the % of matches a player played for his team for a season to count him towards team consistency?
     consistency_value = 40
@@ -374,6 +378,8 @@ if __name__ == "__main__":
 
     # Variable to store the number of times a player played for his team for the season specified
     player_count = PlayerCount(team_season_data)
+    print('jdbvbaskvb')
+    print(player_count)
 
     # Bar Plot of the % of matches a player played for his team for the season specified
     plot_list = player_count["Team"].unique().tolist()

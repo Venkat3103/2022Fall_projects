@@ -54,6 +54,23 @@ selection process of successful teams, the roles assigned to players and if
 successful teams tweaked their side based on oppositions or conditions. Choosing 
 the playing XI is completely in the hands of the captain.
 
+Step 1 : Understanding Player’s consistency in the team
+
+![img_2.png](img_2.png)
+
+Step 2 : How consistent each team were while selecting players for each match ? ( 60%, 6 players )
+
+![img_3.png](img_3.png)
+
+Step 3 : Plot the overall team consistency vs Number of Matches Won by the team
+
+![img_4.png](img_4.png) 
+
+Conclusion:
+
+It is very evident from both the visualizations from the year 2018, it is not correct to say that
+Consistency in selection improves chances of winning the match. Hence, Hypothesis 3 is not true.
+
 ### Hypothesis4 : Toss decision directly contributes to the result of the game.
 Toss is one of the major decisions that a captain makes during the start of the 
 game. A team either chooses to set a target or chase a target. We will analyze if 
