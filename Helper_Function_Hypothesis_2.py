@@ -123,3 +123,24 @@ def get_bowling_data(df: pd.DataFrame):
     bowling_data.rename(columns={'bowler': 'Bowler', 'runs_conceded': 'Runs Conceded', 'ball': 'Balls Bowled',
                                  'wicket_type': 'Wickets Taken', 'match_id': 'innings_played'}, inplace=True)
     return bowling_data
+
+
+def toss_decision_plots(match_info: pd.DataFrame, total_venues):
+    """
+     returns a pie plot for toss decisions made at each venue
+    :param total_venues:
+    :param match_info: dataframe with match info such as toss decision, match winner
+    >>> test_df = pd.read_csv("test2.csv")
+    >>> venue_list = ['Wankhede Stadium','Punjab Cricket Association IS Bindra Stadium','Eden Gardens','Rajiv Gandhi International Stadium','MA Chidambaram Stadium','Sawai Mansingh Stadium','M.Chinnaswamy Stadium','Maharashtra Cricket Association Stadium','Arun Jaitley Stadium','Holkar Cricket Stadium','Dr. Y.S. Rajasekhara Reddy ACA-VDCA Cricket Stadium','Sheikh Zayed Stadium','Dubai International Cricket Stadium','Sharjah Cricket Stadium']
+    >>> toss_decision_plots(test_df,venue_list) # doctest: +ELLIPSIS
+    """
+
+    for venue in total_venues:
+        temp_series = match_info[(match_info['venue'] == venue)]['toss_decision'].value_counts()
+        labels = (np.array(temp_series.index))
+        sizes = (np.array((temp_series / temp_series.sum()) * 100))
+        colors = ['skyblue', 'red']
+        plt.pie(sizes, labels=labels, colors=colors, autopct='%1.1f%%', startangle=90)
+        plt.title("Toss decision Percentage for " + venue)
+        plt.show()
+
