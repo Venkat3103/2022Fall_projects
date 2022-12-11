@@ -42,3 +42,39 @@ def adjust_ball_number(df):
                         curi -= 1
     return df
 
+
+def get_batting_data(df: pd.DataFrame):
+    """
+        Returns a dataframe with batting statistics for each player using the ball by ball dataframe
+
+        :param df: dataframe with ball by ball data :return: batting_data: dataframe with stats for each batsman such as
+        batting average, strike rate, total balls faced and so on.
+        >>> test_df = pd.read_csv("test_file_2.csv")
+        >>> out_df = get_batting_data(test_df)
+        >>> out_df[['Batting Average','Batting Strike Rate']].head()
+           Batting Average  Batting Strike Rate
+        0        11.000000            84.615385
+        1         7.000000           116.666667
+        2        47.655172           162.206573
+        3        24.666667           125.423729
+        4        11.666667           100.000000
+    """
+
+    no_wides = df[df['wides'].isnull()]
+    runs_scored = df.groupby('striker')['runs_off_bat'].sum().to_frame()
+    balls_faced = no_wides.groupby('striker')['ball'].count().to_frame()
+    outs = df['player_dismissed'].value_counts().rename_axis('striker').to_frame('outs')
+    innings_played = df.groupby('striker').match_id.nunique()
+    runs_scored.reset_index(inplace=True)
+    balls_faced.reset_index(inplace=True)
+    outs.reset_index(inplace=True)
+    outs = outs.rename(columns={'index': 'striker'})
+    outs = outs[outs.striker != "-1"]
+    batting_data = pd.merge(
+        pd.merge(pd.merge(runs_scored, balls_faced, how="inner", on='striker'), outs, how="inner", on='striker'),
+        innings_played, how="inner", on='striker')
+    batting_data['Batting Average'] = batting_data['runs_off_bat'] / batting_data['outs']
+    batting_data['Batting Strike Rate'] = batting_data['runs_off_bat'] * 100 / batting_data['ball']
+    batting_data.rename(columns={'striker': 'Player', 'runs_off_bat': 'Runs Scored', 'ball': 'Balls Faced',
+                                 'outs': 'Times Dismissed', 'match_id': 'Innings Played'}, inplace=True)
+    return batting_data
