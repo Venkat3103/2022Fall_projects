@@ -144,3 +144,23 @@ def toss_decision_plots(match_info: pd.DataFrame, total_venues):
         plt.title("Toss decision Percentage for " + venue)
         plt.show()
 
+
+def team_wins_per_venue(match_info, year_list):
+    """
+    returns a bar plot for number of wins by each team at each venue for 3 years.
+    :param year_list:
+    :param match_info: dataframe with match info such as toss decision, match winner
+    >>> test_df = pd.read_csv("test2.csv")
+    >>> years = [2018,2019,2020]
+    >>> team_wins_per_venue(test_df,years) # doctest: +ELLIPSIS
+    """
+    for year in year_list:
+        data = match_info[match_info['year'] == year]
+        data2 = data.groupby('venue')['match_winner'].value_counts().to_frame('number of wins')
+        data2.reset_index(inplace=True)
+        plt.figure()
+        plot = sns.barplot(x='venue', y="number of wins", hue="match_winner", data=data2)
+        plt.xticks(rotation="vertical")
+        plot.set_title('Number of wins per venue by each team in the year ' + str(year))
+
+
