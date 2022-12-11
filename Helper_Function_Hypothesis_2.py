@@ -87,8 +87,7 @@ def get_bowling_data(df: pd.DataFrame):
         :param df: dataframe with ball by ball data :return: batting_data: dataframe with stats for each batsman such as
         batting average, strike rate, total balls faced and so on.
         >>> test_df = pd.read_csv("test_data.csv")
-        >>> out_df = get_bowling_data(test_df)[['Bowler','Balls Bowled','Wickets Taken']]
-        >>> out_df.head()
+        >>> out_df = get_bowling_data(test_df)[['Bowler','Balls Bowled','Wickets Taken']].head()
 
                 Bowler	      Balls Bowled  Wickets Taken
         0	    A Dananjaya	  24	        0
@@ -301,7 +300,6 @@ def bowling_stat(df_2019):
 3	AR Patel	    138	        115.0	            5	              6	           5.000000	    27.6	                23.0	    Arun Jaitley Stadium	Delhi Capitals
 4	YS Chahal	    24	        41.0	            2	              1	          10.250000	    12.0	                20.5	    Arun Jaitley Stadium	Royal Challengers Bangalore
     """
-
     appended_data = []
     venue_list_2019 = df_2019['venue'].unique().tolist()
     for venue in venue_list_2019:
