@@ -45,7 +45,13 @@ conditions. We analyze what kind of strategies have been incorporated
 throughout the season in general in particular venues and whether or not the 
 successful teams have gone to follow the pattern. Every decision on the field is 
 completely taken by the captain of the team and we will analyze the strategies 
-incorporated by successful teams.
+incorporated by successful teams. 
+
+Mumbai Indians won the IPL cup in 2019 and the strategies and decisions made by the team was
+analyzed to see if the venue at which the game was played had a crucial role in 
+their decision-making process.
+
+(Detailed explanation in the notebook)
 
 ### Hypothesis3 : Consistency in selection improves chances of winning the match.
 A common conception is that playing the same set of players over a season will 
