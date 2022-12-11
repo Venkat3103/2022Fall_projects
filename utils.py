@@ -1,8 +1,9 @@
 import pandas as pd
+import numpy as np
 import math
 
 
-def find_phase(ball):
+def find_phase(ball: float):
     """
     This function tags the phase for each of the balls.
     :param ball: the ball number in the match
@@ -24,7 +25,7 @@ def find_phase(ball):
         return "death overs"
 
 
-def adjust_ball_number(df):
+def adjust_ball_number(df: pd.DataFrame):
     """
     Data recorded in the ball number exceeds 0.6 when there are extra deliveries (wides and no balls bowled)
     This function returns a dataframe with ball number in the range of .1 and .6.
@@ -79,7 +80,7 @@ def replace_team_name(df, old_name, new_name):
     return df
 
 
-def compute_total_runs(df):
+def compute_total_runs(df: pd.DataFrame):
     """
     This function returns a data frame after computing the total runs scored after each ball
     :param df:
@@ -128,7 +129,7 @@ def compute_total_runs(df):
     return df
 
 
-def compute_team_score_and_target(df):
+def compute_team_score_and_target(df: pd.DataFrame):
     """
     This function returns a data frame with the team score and the target.
     :param df: the data frame with ball by ball information
@@ -159,42 +160,42 @@ def compute_team_score_and_target(df):
     return df_inn1, df_inn2
 
 
-def compute_run_rate(df):
+def compute_run_rate(df: pd.DataFrame):
     """
-  This function computes the run rate for each of the phases based on the runs scored and the balls bowled in that phase.
-  :param df: dataframe updated with run rate
+    This function computes the run rate for each of the phases based on the runs scored and the balls bowled in that phase.
+    :param df: dataframe updated with run rate
 
-  >>> test_df = pd.DataFrame({'match_id': {0: 1136561, 1: 1136561, 2: 1136561},
-  ... 'phase': {0: 'death overs', 1: 'middle overs', 2: 'powerplay'},
-  ... 'batting_team': {0: 'Mumbai Indians',
-  ...  1: 'Mumbai Indians',
-  ... 2: 'Mumbai Indians'},
-  ... 'bowling_team': {0: 'Chennai Super Kings',
-  ... 1: 'Chennai Super Kings',
-  ... 2: 'Chennai Super Kings'},
-  ... 'ball': {0: 19.6, 1: 15.6, 2: 5.6},
-  ... 'team_score': {0: 165, 1: 121, 2: 39},
-  ... 'wickets': {0: 0, 1: 2, 2: 2},
-  ... 'balls_bowled': {0: 120.0, 1: 96.0, 2: 36.0},
-  ... 'run_rate': {0: 8.25, 1: 7.5625, 2: 6.5}})
-  >>> expected_out_df = pd.DataFrame({'match_id': {0: 1136561, 1: 1136561, 2: 1136561},
-  ... 'phase': {0: 'death overs', 1: 'middle overs', 2: 'powerplay'},
-  ... 'batting_team': {0: 'Mumbai Indians',
-  ... 1: 'Mumbai Indians',
-  ... 2: 'Mumbai Indians'},
-  ... 'bowling_team': {0: 'Chennai Super Kings',
-  ... 1: 'Chennai Super Kings',
-  ... 2: 'Chennai Super Kings'},
-  ... 'ball': {0: 19.6, 1: 15.6, 2: 5.6},
-  ... 'team_score': {0: 165, 1: 121, 2: 39},
-  ... 'wickets': {0: 0, 1: 2, 2: 2},
-  ... 'balls_bowled': {0: 120.0, 1: 96.0, 2: 36.0},
-  ... 'run_rate': {0: 11.0, 1: 8.2, 2: 6.5},
-  ... 'phase_runs': {0: 44, 1: 82, 2: 39},
-  ... 'phase_balls': {0: 24, 1: 60, 2: 36}})
-  >>> expected_out_df.equals(compute_run_rate(test_df))
-  True
-  """
+    >>> test_df = pd.DataFrame({'match_id': {0: 1136561, 1: 1136561, 2: 1136561},
+    ... 'phase': {0: 'death overs', 1: 'middle overs', 2: 'powerplay'},
+    ... 'batting_team': {0: 'Mumbai Indians',
+    ...  1: 'Mumbai Indians',
+    ... 2: 'Mumbai Indians'},
+    ... 'bowling_team': {0: 'Chennai Super Kings',
+    ... 1: 'Chennai Super Kings',
+    ... 2: 'Chennai Super Kings'},
+    ... 'ball': {0: 19.6, 1: 15.6, 2: 5.6},
+    ... 'team_score': {0: 165, 1: 121, 2: 39},
+    ... 'wickets': {0: 0, 1: 2, 2: 2},
+    ... 'balls_bowled': {0: 120.0, 1: 96.0, 2: 36.0},
+    ... 'run_rate': {0: 8.25, 1: 7.5625, 2: 6.5}})
+    >>> expected_out_df = pd.DataFrame({'match_id': {0: 1136561, 1: 1136561, 2: 1136561},
+    ... 'phase': {0: 'death overs', 1: 'middle overs', 2: 'powerplay'},
+    ... 'batting_team': {0: 'Mumbai Indians',
+    ... 1: 'Mumbai Indians',
+    ... 2: 'Mumbai Indians'},
+    ... 'bowling_team': {0: 'Chennai Super Kings',
+    ... 1: 'Chennai Super Kings',
+    ... 2: 'Chennai Super Kings'},
+    ... 'ball': {0: 19.6, 1: 15.6, 2: 5.6},
+    ... 'team_score': {0: 165, 1: 121, 2: 39},
+    ... 'wickets': {0: 0, 1: 2, 2: 2},
+    ... 'balls_bowled': {0: 120.0, 1: 96.0, 2: 36.0},
+    ... 'run_rate': {0: 11.0, 1: 8.2, 2: 6.5},
+    ... 'phase_runs': {0: 44, 1: 82, 2: 39},
+    ... 'phase_balls': {0: 24, 1: 60, 2: 36}})
+    >>> expected_out_df.equals(compute_run_rate(test_df))
+    True
+    """
     df['phase_runs'] = 0
     df['run_rate'] = 0.0
     df['phase_balls'] = 0
@@ -215,7 +216,7 @@ def compute_run_rate(df):
     return df
 
 
-def compute_balls_bowled(ball):
+def compute_balls_bowled(ball: float):
     """
     This function computes the number of balls bowled after every single ball.
     :param ball: the ball number
@@ -231,7 +232,7 @@ def compute_balls_bowled(ball):
     return ball * 10 // 10 * 6 + ball * 10 % 10
 
 
-def compute_batting_position(df, match_id):
+def compute_batting_position(df: pd.DataFrame, match_id: int):
     """
     This function computes the batting position of every batter in each of the games.
     :param df: ball by ball data
@@ -283,7 +284,7 @@ def compute_batting_position(df, match_id):
     return pd.concat([inn1_df, inn2_df])
 
 
-def get_batting_data(df):
+def get_batting_data(df: pd.DataFrame):
     """
     This function summarises the batting statistics for each batting position using the ball by ball data
     :param df: ball by ball data
