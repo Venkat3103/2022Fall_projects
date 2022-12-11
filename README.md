@@ -64,6 +64,20 @@ the analysis and this cannot be found on the internet. This was scraped from the
 while ago which has now been blocked. Another info dataset about player selection and toss 
 decisions is being obtained from Cricsheet.org website which is an open-source cricket data site.
 
+The below pie chart helps us understand that there is a higher chance of a team winning when they tend to win the toss
+initially. Although, toss decision plays a larger role here which is illustrated in the next chart.
+![img_1.png](img_1.png)
+
+The below image shows a Bar Graph of Toss Decision vs Matches Won for the year of 2018. It is very evident that teams
+who won the toss and decided to field first had more winning to losing ratio.
+![img.png](img.png)
+
+Conclusion:
+
+It is very evident from both the visualizations from the year 2018, that Toss decision directly contributes to the 
+result of the game. Hence, Hypothesis 4 is true.
+
+# ---------------------------------------------------------------------------------------------
 URL1: https://github.com/Venkat3103/2022Fall_projects/blob/main/ipl_advanced_bbb_since_2018.csv
 
 
