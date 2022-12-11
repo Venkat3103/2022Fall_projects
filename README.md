@@ -36,6 +36,8 @@ the upper-hand in the game. However, teams have different approaches to
 different phases, and we are interested to analyze which phase do successful
 teams target and maximize output in order to produce better results.
 
+(Detailed explanation in the notebook)
+
 ### Hypothesis2 : Teams which adhere to pitch conditions increase their chances of winning.
 Cricket is a game which is hugely affected by the pitch condition (i.e. the soil on 
 which the game is being played on). Different approaches work in different 
