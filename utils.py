@@ -1,11 +1,10 @@
 import pandas as pd
-import numpy as np
 import math
 
 
 def find_phase(ball):
     """
-    Computes which phase a particular ball belongs to
+    This function tags the phase for each of the balls.
     :param ball: the ball number in the match
     :return: phase as a string
 
@@ -28,7 +27,7 @@ def find_phase(ball):
 def adjust_ball_number(df):
     """
     Data recorded in the ball number exceeds 0.6 when there are extra deliveries (wides and no balls bowled)
-    returns a dataframe with ball number in the range of .1 and .6.
+    This function returns a dataframe with ball number in the range of .1 and .6.
     :param df: dataframe with ball by ball data
     :return: updated dataframe with ball number in the range 0.1 and 0.6
 
@@ -60,7 +59,7 @@ def adjust_ball_number(df):
 
 def replace_team_name(df, old_name, new_name):
     """
-    
+    This function replaces all occurence of an old team name with the new team name.
     :param df: 
     :param old_name: old name of the team which has to be replaced
     :param new_name: new name of the team with which old value has to be replaced
@@ -82,7 +81,7 @@ def replace_team_name(df, old_name, new_name):
 
 def compute_total_runs(df):
     """
-
+    This function returns a data frame after computing the total runs scored after each ball
     :param df:
     :return:
     >>> test_df = pd.DataFrame({'ball': {0: 0.1,
@@ -131,7 +130,7 @@ def compute_total_runs(df):
 
 def compute_team_score_and_target(df):
     """
-
+    This function returns a data frame with the team score and the target.
     :param df: the data frame with ball by ball information
     :return: two data frames one for each inning with the team scores for both and additionally target for the second innings
     >>> test_df = pd.read_csv("test_file_1.csv")
@@ -162,7 +161,7 @@ def compute_team_score_and_target(df):
 
 def compute_run_rate(df):
     """
-  computes the run rate for each of the phases based on the runs scored and the balls bowled in that phase
+  This function computes the run rate for each of the phases based on the runs scored and the balls bowled in that phase.
   :param df: dataframe updated with run rate
 
   >>> test_df = pd.DataFrame({'match_id': {0: 1136561, 1: 1136561, 2: 1136561},
@@ -218,6 +217,7 @@ def compute_run_rate(df):
 
 def compute_balls_bowled(ball):
     """
+    This function computes the number of balls bowled after every single ball.
     :param ball: the ball number
     :return: the total number of balls bowled till this point in the inning
 
@@ -233,7 +233,7 @@ def compute_balls_bowled(ball):
 
 def compute_batting_position(df, match_id):
     """
-
+    This function computes the batting position of every batter in each of the games.
     :param df: ball by ball data
     :param match_id: match for which batting positions have to be computed
     :return: data frame with batting positions of each player in a particular match in each of the innings
@@ -285,9 +285,9 @@ def compute_batting_position(df, match_id):
 
 def get_batting_data(df):
     """
-
-    :param df:
-    :return:
+    This function summarises the batting statistics for each batting position using the ball by ball data
+    :param df: ball by ball data
+    :return: summarised batting statistics based on batting position
 
     >>> test_df = pd.read_csv("test_file_2.csv")
     >>> out_df = get_batting_data(test_df)
