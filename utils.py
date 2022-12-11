@@ -234,9 +234,9 @@ def compute_balls_bowled(ball):
 def compute_batting_position(df, match_id):
     """
 
-    :param df:
-    :param match_id:
-    :return:
+    :param df: ball by ball data
+    :param match_id: match for which batting positions have to be computed
+    :return: data frame with batting positions of each player in a particular match in each of the innings
 
     >>> pos_df = pd.DataFrame(columns = ["batting_position","match_id","innings","striker"])
     >>> test_df = pd.read_csv("test_file_1.csv")
@@ -282,3 +282,44 @@ def compute_batting_position(df, match_id):
     inn2_df['batting_position'] = inn2_df['batting_position'] + 1
     return pd.concat([inn1_df, inn2_df])
 
+
+def get_batting_data(df):
+    """
+
+    :param df:
+    :return:
+
+    >>> test_df = pd.read_csv("test_file_2.csv")
+    >>> out_df = get_batting_data(test_df)
+    >>> out_df[['Batting Average','Batting Strike Rate']]
+        Batting Average  Batting Strike Rate
+    0         33.286567           134.365586
+    1         32.167665           139.786625
+    2         31.715655           132.660698
+    3         29.663194           133.944810
+    4         23.714844           130.784145
+    5         24.535714           144.849398
+    6         20.422535           139.155470
+    7         12.285714           124.123711
+    8          7.774194            90.943396
+    9          8.741935            89.438944
+    10         4.812500            71.296296
+    """
+    no_wides = df[df['wides'].isnull()]
+    runs_scored = df.groupby('batting_position')['runs_off_bat'].sum().to_frame()
+    balls_faced = no_wides.groupby('batting_position')['ball'].count().to_frame()
+    outs = df['player_dismissed_pos'].value_counts().rename_axis('batting_position').to_frame('outs')
+    innings_played = df.groupby('batting_position').match_id.nunique()
+    runs_scored.reset_index(inplace=True)
+    balls_faced.reset_index(inplace=True)
+    outs.reset_index(inplace=True)
+    outs = outs.rename(columns={'index': 'batting_position'})
+    outs = outs[outs.batting_position != "-1"]
+    batting_data = pd.merge(
+        pd.merge(pd.merge(runs_scored, balls_faced, how="inner", on='batting_position'), outs, how="inner",
+                 on='batting_position'), innings_played, how="inner", on='batting_position')
+    batting_data['Batting Average'] = batting_data['runs_off_bat'] / batting_data['outs']
+    batting_data['Batting Strike Rate'] = batting_data['runs_off_bat'] * 100 / batting_data['ball']
+    batting_data.rename(columns={'batting_position': 'Player', 'runs_off_bat': 'Runs Scored', 'ball': 'Balls Faced',
+                                 'outs': 'Times Dismissed', 'match_id': 'Innings Played'}, inplace=True)
+    return batting_data
