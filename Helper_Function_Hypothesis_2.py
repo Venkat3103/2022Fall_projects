@@ -164,3 +164,37 @@ def team_wins_per_venue(match_info, year_list):
         plot.set_title('Number of wins per venue by each team in the year ' + str(year))
 
 
+def toss_and_match_wins_per_venue(match_info):
+    """
+    returns the total number of games won by batting first and fielding first at each venue
+    for all 3 seasons of IPL
+    :param match_info: dataframe with match info such as toss decision, match winner
+    :param df: dataframe with ball by ball data
+    :return total_wins: Number of games won by batting first and fielding first at each venue
+
+    >>> test_df = pd.read_csv("test2.csv")
+    >>> out_df = toss_and_match_wins_per_venue(test_df)
+
+                                          venue  Batting first  Fielding_first
+0                          Sheikh Zayed Stadium             11              10
+1           Dubai International Cricket Stadium             11              12
+2                          Arun Jaitley Stadium              6               7
+3                        Sawai Mansingh Stadium              5               9
+4            Rajiv Gandhi International Stadium              5              10
+5                       Sharjah Cricket Stadium              4               8
+6                        MA Chidambaram Stadium              2               7
+7  Punjab Cricket Association IS Bindra Stadium              1               9
+
+    """
+
+    bat_wins_per_venue = match_info[match_info['toss_decision'] == 'bat']['venue'].value_counts()
+    field_wins_per_venue = match_info[match_info['toss_decision'] == 'field']['venue'].value_counts()
+    batting = bat_wins_per_venue.reset_index()
+    batting = batting.rename(columns={'index': 'venue', 'venue': 'Batting first'})
+    fielding = field_wins_per_venue.reset_index()
+    fielding = fielding.rename(columns={'index': 'venue', 'venue': 'Fielding_first'})
+    total_wins = pd.merge(batting, fielding, on='venue')
+
+    return total_wins
+
+
